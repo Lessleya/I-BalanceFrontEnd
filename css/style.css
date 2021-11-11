@@ -9,17 +9,17 @@
 }
 
 body {
-    margin: 0;
+    margin: 0 100px 0 100px;
+    font-family: "Relaway", sans-serif;
 }
 
-img {
+.logo {
     width: 5%;
 }
 
 .header {
-    overflow: hidden;
     background-color: var(--blue);
-    padding: 20px 10px;
+    padding: 10px;
 }
 
 .header a {
@@ -52,6 +52,27 @@ img {
 .header-right {
     float: right;
     font-family: "Raleway", sans-serif;
+}
+
+footer {
+    background-color: var(--blue);
+    padding: 30px;
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    color: white;
+}
+
+.hero-today {
+    color: var(--yellow);
+    padding: 25px;
+    text-align: center;
+}
+
+.icon-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15%;
 }
 
 @media screen and (max-width: 500px) {
