@@ -1,7 +1,7 @@
 const url = 'https://cse341-ibalance-api.herokuapp.com/'
 class DataService
 {
-    async getCrsfToken(){
+    async getCsrfToken(){
         return await fetch(url + "login").then(res=> res.json)
     }
     async postLogin(data){
