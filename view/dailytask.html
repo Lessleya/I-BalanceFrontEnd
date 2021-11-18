@@ -11,7 +11,7 @@
     <!-- style -->
     <link rel="stylesheet" href="css/style.css">
     <!-- JavaScript -->
-    <script src="js/main.js"></script>
+    <script src="js/main.js" type="module"></script>
     <!-- Fonts  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,18 +21,7 @@
 </head>
 
 
-<header>
-    <div class="header">
-        <a href="#" class="logo-tag" style="font-family: 'Bebas Neue', sans-serif; font-size: 45px;">I-BALANCE</a>
-        <img class="logo" src="images/logo.png">
-        <div class="header-right">
-            <a class="active" href="#">Today</a>
-            <a href="#contact">Categories</a>
-            <a href="#about">Progress</a>
-            <a href="#about">Login</a>
-        </div>
-    </div>
-</header>
+<header id="main-header"></header>
 
 <body>
     <div class="hero-today">
@@ -46,9 +35,7 @@
 
 
 
-    <footer>
-        <p>&copy;I-Balance | Attributions | Team <span id="currentDate"></span></p>
-    </footer>
+    <footer id="main-footer"></footer>
 </body>
 <script src="js/main.js"></script>
 

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 function categories(category){
 
     switch(category) {
@@ -23,3 +24,8 @@ function categories(category){
       }
 
 }
+=======
+import { loadHeaderFooter } from "./utils.js";
+
+loadHeaderFooter();
+>>>>>>> tasks
