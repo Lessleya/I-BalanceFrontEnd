@@ -1,31 +1,22 @@
-<<<<<<< HEAD
-function categories(category){
+function categories(category) {
+    switch (category) {
+        case "spiritual":
+            document.getElementById("logo").src = "../images/spiritual-logo.png";
 
-    switch(category) {
-        case 'spiritual':
-            
-            document.getElementById("logo").src="../images/spiritual-logo.png";
+            break;
+        case "intelectual":
+            break;
 
-          break;
-        case 'intelectual':
+        case "social":
+            break;
 
-          break;
-
-        case 'social':
-
-        break;
-
-        case'physical':
-
-        break;
+        case "physical":
+            break;
 
         default:
-          // code block
-      }
-
+            // code block
+    }
 }
-=======
 import { loadHeaderFooter } from "./utils.js";
 
 loadHeaderFooter();
->>>>>>> tasks
