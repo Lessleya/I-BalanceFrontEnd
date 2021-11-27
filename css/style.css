@@ -46,11 +46,6 @@ body {
     font-size: 30px;
 }
 
-.header a.active {
-    background-color: var(--yellow);
-    color: black;
-}
-
 .header a:hover {
     background-color: var(--yellow);
     color: black;
@@ -64,7 +59,7 @@ body {
 a.login {
     background-color: white;
     color: #1faafa;
-    border-radius: 20px;
+    border-radius: 4px;
 }
 
 
@@ -102,6 +97,11 @@ footer {
     .header-right {
         float: none;
     }
+    .logo {
+        width: 30%;
+    }
+
+
 }
 
 
