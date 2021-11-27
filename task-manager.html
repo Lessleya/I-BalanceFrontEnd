@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager | I-Belong</title>
+    <link rel="stylesheet" href="../css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@200&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon">
+</head>
+
+<body>
+    <header id="main-header"></header>
+    <!-- Trigger/Open The add task Modal -->
+
+    <div id=category-cont>
+        <div id="category">
+
+
+            <div id="category-image-cont">
+                <img src="/images/physical-logo.png">
+            </div>
+            <h1>Physical</h1>
+        </div>
+    </div>
+    
+    <div id="task-cont">
+        <ul id="task-list">
+            <li id="myBtn" id="content">   + Add Task</li>
+        </ul>
+        
+        <!-- <input id="myBtn" type="text" id="content" name="content" placeholder="   + Add task" readonly> -->
+    </div>
+
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <!-- The add task Modal -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Add Task</h2>
+            </div>
+            <div class="modal-body">
+                <!-- add task - Form -->
+                <form action="/add-task" method="POST">
+                    <h1 class="default-input-style" id=taskHeader>Title</h1>
+                    <!-- Task Title -->
+                    <label for="taskTitle">Title</label>
+                    <input type="text" name="taskTitle" id="taskTitle">
+
+                    <!-- Task Category -->
+                    <label for="taskCategory">Category</label>
+                    <input type="text" name="taskCategory" id="taskCategory">
+
+                    <label for="taskDate">Date</label>
+                    <input type="date" name="date" id="taskDate">
+                    <label for="taskTime">Time</label>
+                    <input type="time" name="taskTime" id="taskTime">
+
+                    <!-- Task Description -->
+                    <label for="taskNotes">Notes</label>
+                    <textarea id="taskNotes" name="taskNotes"></textarea>
+
+                    <label for="taskRepeats">Would you like this event to repeat?</label>
+                    <input type="checkbox" name="taskRepeats" id="taskRepeats">
+
+
+                    <button class="blue-button" type="submit">Add Task</button>
+                </form>
+            </div>
+        </div>
+        <!-- <footer id="main-footer"></footer> -->
+    </div>
+
+    <footer id="main-footer"></footer>
+
+    <script src="../js/main.js" type="module"></script>
+    <script src="../js/task.js"></script>
+</body>
+
+</html>
