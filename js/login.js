@@ -12,12 +12,18 @@ async function processLogin(e) {
     console.log(await res)
   );
 }
-const messageBox = document.querySelector('.js-register')
-messageBox.addEventListener('click', showRegister);
+
+document.querySelector('.js-register').addEventListener('click', showRegister);
 async function showRegister(e){
   e.preventDefault();
   document.querySelector('.register-form').classList.remove('hidden-error')
   document.querySelector('.login-form').classList.add('hidden-error')
+}
+document.querySelector('.js-signin').addEventListener('click', showLogin);
+async function showLogin(e){
+  e.preventDefault();
+  document.querySelector('.register-form').classList.add('hidden-error')
+  document.querySelector('.login-form').classList.remove('hidden-error')
 }
 
 document.querySelector('.register-form').addEventListener('submit', processRegister);
