@@ -11,64 +11,66 @@
     <!-- style -->
     <link rel="stylesheet" href="../css/style.css">
     <!-- JavaScript -->
-    <script src="../js/main.js"></script>
+    <script src="../js/main.js" type="module"></script>
     <!-- Fonts  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@200&display=swap" rel="stylesheet">\
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@200&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon">
 </head>
 
 
-<header>
+<header id="main-header">
     <div class="header">
-        <a href="#" class="logo-tag" style="font-family: 'Bebas Neue', sans-serif; font-size: 45px;">I-BALANCE</a>
+        <a href="index.html" class="logo-tag" style="font-family: 'Bebas Neue', sans-serif; font-size: 45px;">I-BALANCE</a>
         <img class="logo" src="../images/logo.png">
         <div class="header-right">
-            <a class="" href="../index.html">Today</a>
-            <a class="active" href="#contact">Categories</a>
-            <a href="#about">Progress</a>
-            <a class="login" href="../index.html">Login</a>
+            <a href="index.html">Home</a>
+            <a class="active" href="../view/dailytask.html">Today</a>
+            <a href="../view/categories.html">Categories</a>
+            <a href="../view/progress.html">Progress</a>
+            <a href="../view/login.html">Login</a>
         </div>
     </div>
 </header>
-
-
 
 <body>
 
     <div class="main-categories">
 
-        <h1 class="title-categories">Categories</h1>
-
+    <a href="category-tasks.html?category=spiritual">
         <div class="spiritual">
-            <img class="image-box" src="/images/spiritual.png" alt="">
+            <img class="image-box" src="../images/spiritual-logo.png" alt="spiritual">
+            <h2>Physical</h2>
+        </div>
+    </a>
+
+    <a href="category-tasks.html?category=physical">
+        <div class="physical">
+            <img class="image-box" src="../images/physical-logo.png" alt="physical">
             <h2>Spiritual</h2>
         </div>
+    </a>
 
+    <a href="category-tasks.html?category=intelectual">
         <div class="intelectual">
-            <img class="image-box" src="../images/intelectual-logo.png" alt="">
+            <img class="image-box" src="../images/intelectual-logo.png" alt="Intelectual">
             <h2>Intelectual</h2>
         </div>
+    </a>
 
+    <a href="category-tasks.html?category=social">
         <div class="social">
-            <img class="image-box" src="../images/social-logo.png" alt="">
-            <h2>Social</h2>
+            <img class="image-box" src="../images/social-logo.png" alt="social">
+            <h2>Intelectual</h2>
         </div>
+    </a>
 
-        <div class="physical">
-            <img class="image-box" src="../images/physical-logo.png" alt="">
-            <h2>Physical</h2>
+</div>
 
-        </div>
-
-    </div>
-
+    <footer id="main-footer">
+        <p>&copy;I-Balance | Attributions | Team <span id="currentDate"></span></p>
+    </footer>
 </body>
-
-<footer>
-    <p>Author: Hege Refsnes<br>
-        <a href="mailto:hege@example.com">hege@example.com</a></p>
-</footer>
 
 </html>
