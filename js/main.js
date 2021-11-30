@@ -4,12 +4,15 @@
 function categories(category){
 
   var title_element = document.getElementById("categoryTitle");
+  var BackgroundColor="#f3a87c"; 
   // var logo = document.getElementsById("category-logo").;
 
     switch(category) {
         case 'spiritual':
+
           title_element.innerHTML="Spiritual";
           document.getElementById("category-logo").src="../images/spiritual-logo.png";
+          document.getElementById("hero-today").style.backgroundColor=BackgroundColor
 
           break;
         case 'intelectual':
@@ -26,7 +29,7 @@ function categories(category){
         break;
 
         case'physical':
-        title_element.innerHTML="physical";
+        title_element.innerHTML="Physical";
         document.getElementById("category-logo").src="../images/physical-logo.png";
 
         break;
