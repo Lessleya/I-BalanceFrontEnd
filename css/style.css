@@ -295,6 +295,7 @@ footer {
 
 
 /********************** Add Task **********************/
+
 /* The Modal (background) */
 .modal {
     display: none;
@@ -315,17 +316,6 @@ footer {
     /* Fallback color */
     background-color: rgba(0, 0, 0, 0.4);
     /* Black w/ opacity */
-}
-
-/* Modal Content/Box */
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button */
@@ -372,9 +362,7 @@ footer {
     }
 }
 
-.modal-body input,
-.modal-body button,
-.modal-body textarea {
+.modal-body input, .modal-body button, .modal-body textarea {
     margin-bottom: 20px;
 }
 
@@ -407,11 +395,6 @@ form textarea {
     display: flex;
     flex-direction: column;
 }
-
-
-/* add-task */
-
-
 
 /* Category work */
 #category-cont{
@@ -462,13 +445,22 @@ form textarea {
     cursor:pointer;
 }
 
+#addNewTask textarea{
+    max-width: 300px;
+    /* max-height: 100px; */
+}
 
 
 
 
 
 
-/* Util */
+
+
+
+
+
+/******************* Util *****************************/
 .blue-button {
     outline: 0;
     background: #1faafa;
