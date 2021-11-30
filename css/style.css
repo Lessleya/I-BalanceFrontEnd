@@ -185,6 +185,10 @@ footer {
     display: none;
 }
 
+.hidden-error {
+    display: none;
+}
+
 .container {
     position: relative;
     z-index: 1;
