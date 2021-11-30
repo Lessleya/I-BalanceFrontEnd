@@ -8,7 +8,7 @@ async function processLogin(e) {
     _csrf: _csrf,
   };
   await DataService.post(data, 'login');
-  await DataService.get('daily-tasks').then(async res =>
-    console.log(await res)
-  );
+  // await DataService.get('daily-tasks').then(async res =>
+  //   console.log(await res)
+  // );
 }
