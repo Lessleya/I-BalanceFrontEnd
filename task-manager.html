@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager | I-Belong</title>
+    <link rel="stylesheet" href="../css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@200&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon">
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="main-header">
+        <div class="header">
+            <a href="index.html" class="logo-tag"
+                style="font-family: 'Bebas Neue', sans-serif; font-size: 45px;">I-BALANCE</a>
+            <img class="logo" src="../images/logo.png">
+            <div class="header-right">
+                <a href="index.html">Home</a>
+                <a class="active" href="../view/dailytask.html">Today</a>
+                <a href="../view/categories.html">Categories</a>
+                <a href="../view/progress.html">Progress</a>
+                <a href="../view/login.html">Login</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Trigger/Open The add task Modal -->
+    <div id="myModal" class="modal"></div>
+
+    <!-- Category Container -->
+    <div id=category-cont>
+        <div id="category">
+
+
+            <div id="category-image-cont">
+                <img src="/images/physical-logo.png">
+            </div>
+            <h1>Physical</h1>
+        </div>
+    </div>
+
+    <div id="task-cont">
+        <ul id="task-list">
+            <li id="myBtn" id="content"> + Add Task</li>
+        </ul>
+    </div>
+
+    <footer id="main-footer">
+        <p>&copy;I-Balance | Attributions | Team <span id="currentDate"></span></p>
+    </footer>
+
+    <script src="../js/main.js" type="module"></script>
+    <script src="../js/temp.js"></script>
+    <script src="../js/task.js"></script>
+</body>
+
+</html>
