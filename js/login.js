@@ -12,6 +12,14 @@ async function processLogin(e) {
     console.log(await res)
   );
 }
+const messageBox = document.querySelector('.js-register')
+messageBox.addEventListener('click', showRegister);
+async function showRegister(e){
+  e.preventDefault();
+  document.querySelector('.register-form').classList.remove('hidden-error')
+  document.querySelector('.login-form').classList.add('hidden-error')
+}
+
 document.querySelector('.register-form').addEventListener('submit', processRegister);
 async function processRegister(e) {
   e.preventDefault();
@@ -19,9 +27,9 @@ async function processRegister(e) {
   fpassword = document.getElementById('password').value
   spassword = document.getElementById('verifyPassword').value
   if (fpassword != spassword){
-   let error = document.getElementsByClassName('hidden-error')[0]
-   error.value = "Password don't match"
-   error.style.display
+   let error = document.querySelector('.hidden-error')
+   error.textContent = "Password don't match"
+   error.classList.remove('hidden-error')
   }
   const data = {
     name: document.getElementById('name').value,
