@@ -7,17 +7,21 @@ async function processLogin(e) {
     password: document.getElementById('passwordlogin').value,
     _csrf: _csrf,
   };
-  await DataService.post(data, 'login');
-  await DataService.get('daily-tasks').then(async res =>
-    console.log(await res)
-  );
+  const test = await DataService.post(data, 'login');
+  console.log(test)
 }
-const messageBox = document.querySelector('.js-register')
-messageBox.addEventListener('click', showRegister);
+
+document.querySelector('.js-register').addEventListener('click', showRegister);
 async function showRegister(e){
   e.preventDefault();
   document.querySelector('.register-form').classList.remove('hidden-error')
   document.querySelector('.login-form').classList.add('hidden-error')
+}
+document.querySelector('.js-signin').addEventListener('click', showLogin);
+async function showLogin(e){
+  e.preventDefault();
+  document.querySelector('.register-form').classList.add('hidden-error')
+  document.querySelector('.login-form').classList.remove('hidden-error')
 }
 
 document.querySelector('.register-form').addEventListener('submit', processRegister);
@@ -39,7 +43,4 @@ async function processRegister(e) {
     _csrf: _csrf,
   };
   await DataService.post(data, 'signup');
-  await DataService.get('daily-tasks').then(async res =>
-    console.log(await res)
-  );
 }

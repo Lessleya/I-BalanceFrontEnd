@@ -8,9 +8,8 @@ class DataService {
       credentials: 'include',
       headers: { 'Content-Type': 'application/json' },
     };
-    return await fetch(url + 'login', option).then(async res => {
+    return await fetch(url, option).then(async res => {
       res = await res.json();
-      console.log(res._csrf);
       return res._csrf;
     });
   }
