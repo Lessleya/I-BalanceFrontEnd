@@ -7,10 +7,8 @@ async function processLogin(e) {
     password: document.getElementById('passwordlogin').value,
     _csrf: _csrf,
   };
-  await DataService.post(data, 'login');
-  await DataService.get('daily-tasks').then(async res =>
-    console.log(await res)
-  );
+  const test = await DataService.post(data, 'login');
+  console.log(test)
 }
 
 document.querySelector('.js-register').addEventListener('click', showRegister);
@@ -45,7 +43,4 @@ async function processRegister(e) {
     _csrf: _csrf,
   };
   await DataService.post(data, 'signup');
-  await DataService.get('daily-tasks').then(async res =>
-    console.log(await res)
-  );
 }
