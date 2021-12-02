@@ -63,6 +63,14 @@ a.login {
 }
 
 
+/* Hero Image */
+
+.hero-section img {
+    width: 50%;
+    float: right;
+}
+
+
 /****************************** ******************************/
 
 footer {
@@ -99,8 +107,6 @@ footer {
     .logo {
         width: 30%;
     }
-
-
 }
 
 
@@ -278,7 +284,7 @@ footer {
     text-align: center;
 }
 
-#category-logo{
+#category-logo {
     max-width: 200px;
     max-height: 200px;
 }
