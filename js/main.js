@@ -15,9 +15,9 @@ function categories(category){
           document.getElementById("hero-today").style.backgroundColor=BackgroundColor
 
           break;
-        case 'intelectual':
-          title_element.innerHTML="Intelectual";
-          document.getElementById("category-logo").src="../images/intelectual-logo.png";
+        case 'intellectual':
+          title_element.innerHTML="Intellectual";
+          document.getElementById("category-logo").src="../images/intellectual-logo.png";
 
 
           break;

@@ -76,8 +76,14 @@ footer {
 #hero-today {
     background-color: var(--yellow);
     color: black;
-    padding: 25px;
+    max-height: 40%;
     text-align: center;
+}
+
+#hero-today h1{
+    text-transform: uppercase;
+    margin: 0;
+    padding-bottom: 10px;
 }
 
 .icon-img {
@@ -231,7 +237,7 @@ footer {
 /****************************** CATEGORIES ******************************/
 
 .spiritual,
-.intelectual,
+.intellectual,
 .social,
 .physical {
     background-color: var(--blue);
@@ -262,7 +268,7 @@ footer {
     grid-column: 1;
 }
 
-.intelectual {
+.intellectual {
     grid-column: 2;
 }
 
@@ -399,31 +405,6 @@ form textarea {
 .modal-content input {
     display: flex;
     flex-direction: column;
-}
-
-/* Category work */
-#category-cont{
-    background-color: #fbc42b;
-    max-height: 40%;
-}
-
-#category-cont #category{
-    text-align: center;
-}
-
-#category-cont img{
-    padding-top: 15px;
-}
-
-#category-cont h1{
-    text-transform: uppercase;
-    margin: 0;
-    padding-bottom: 10px;
-}
-
-#category-image-cont img{
-    max-width: 6%;
-    text-align: center;
 }
 
 #task-cont{

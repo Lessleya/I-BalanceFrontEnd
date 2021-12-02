@@ -10,8 +10,6 @@
     <meta name="description" content="App to help manage your time ">
     <!-- style -->
     <link rel="stylesheet" href="../css/style.css">
-    <!-- JavaScript -->
-    <script type="module" src="../js/main.js"></script>
     <!-- Fonts  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,10 +37,18 @@
 <body>
     <div class="main">
 
-    <div id="hero-today" value="category=spiritual">
-        <h1 id="categoryTitle" name="categoryTitle"> aa</h1>
+    <div id="hero-today" value="category=">
+        <h1 id="categoryTitle" name="categoryTitle"> </h1>
         <img id="category-logo" src="" alt="icon" name="category-logo">
 
+    </div>
+    <!-- Trigger/Open The add task Modal -->
+    <div id="myModal" class="modal"></div>
+
+    <div id="task-cont">
+        <ul id="task-list">
+            <li id="myBtn" id="content"> + Add Task</li>
+        </ul>
     </div>
 
 </div>
@@ -50,5 +56,9 @@
     <footer>
         <p>&copy;I-Balance | Attributions | Team <span id="currentDate"></span></p>
     </footer>
+    <!-- JavaScript -->
+    <script src="../js/main.js" type="module"></script>
+    <script src="../js/temp.js"></script>
+    <script src="../js/task.js"></script>
 </body>
 </html>
