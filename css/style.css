@@ -431,6 +431,18 @@ form textarea {
     cursor:pointer;
 }
 
+#task-list>li, #task-list>li>form {
+    display: flex;
+    align-items: center;
+    
+}
+
+.editTask {
+    height: 1.5em;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
 #addNewTask textarea{
     max-width: 300px;
     /* max-height: 100px; */
