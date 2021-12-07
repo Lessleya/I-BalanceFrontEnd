@@ -10,34 +10,24 @@
     <meta name="description" content="App to help manage your time ">
     <!-- style -->
     <link rel="stylesheet" href="../css/style.css">
+
+    <link rel="stylesheet" href="../css/mobile.css">
     <!-- JavaScript -->
-    <script type="module" src="../js/main.js"></script>
+    <script src="../js/main.js" type="module"></script>
+
     <!-- Fonts  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@200&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon">
-
 </head>
 
-
-<header>
-    <div class="header">
-        <a href="index.html" class="logo-tag" style="font-family: 'Bebas Neue', sans-serif; font-size: 45px;">I-BALANCE</a>
-        <img class="logo" src="../images/logo.png">
-        <div class="header-right">
-            <a href="../index.html">Home</a>
-            <a class="active" href="../view/dailytask.html">Today</a>
-            <a href="categories.html">Categories</a>
-            <a href="progress.html">Progress</a>
-            <a href="login.html">Login</a>
-        </div>
-    </div>
+<header id="main-header">
 </header>
 
 
+
 <body>
-    <div class="main">
 
     <div id="hero-today" value="category=spiritual">
         <div class="category-header">
@@ -47,11 +37,31 @@
         <p id="category-paragraph"> "Balance your life wirh spiritual experiences that remind and prepare you for continued, daily ministering to others"</p>
         <img id="category-image" src="" alt="icon" name="category-image">
     </div>
+    <!-- Trigger/Open The add task Modal -->
+    <div id="myModal" class="modal">
+        
+    </div>
 
-</div>
+    <div id="task-cont">
+        <ul>
 
-    <footer>
-        <p>&copy;I-Balance | Attributions | Team <span id="currentDate"></span></p>
-    </footer>
+            <li id="myBtn" id="content"> + Add Task</li>
+        </ul>
+        <ul id="task-list">
+            
+        </ul>
+    </div>
+
+<footer id="main-footer">
+</footer>
+    <!-- JavaScript -->
+    <script src="../js/dataservice.js"></script>
+    <script type='module' src="/js/check-login.js"></script>
+    <script src="../js/main.js" type="module"></script>
+    <script src="../js/task-modal.js"></script>
+    <script src="../js/task.js"></script>
+
 </body>
+
 </html>
+

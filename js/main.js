@@ -42,18 +42,19 @@ function categories(category){
         document.getElementById("category-image").src="../images/physical-image.png";
         document.getElementById("hero-today").style.backgroundColor=backgroundColor_physical;
 
-        break;
+            break;
 
         default:
-      }
+            // code block
+    }
 }
 
 function getParam(param) {
-  const queryString = window.location.search;
-  const urlParams = new URLSearchParams(queryString);
-  return urlParams.get(param);
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    return urlParams.get(param);
 }
 
- var category = getParam("category")
+var category = getParam("category");
 
-categories(category)
+categories(category);

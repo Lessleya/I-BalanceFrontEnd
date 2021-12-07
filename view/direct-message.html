@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="" content="width=device-width, initial-scale=1.0">
+    <title>I-Balance</title>
+    <meta name="description" content="App to help manage your time ">
+    <!-- style -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- JavaScript -->
+    <script src="../js/main.js" type="module"></script>
+    <!-- Fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@200&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon">
+</head>
+
+
+<header id="main-header">
+    <div class="header">
+        <a href="index.html" class="logo-tag" style="font-family: 'Bebas Neue', sans-serif; font-size: 45px;">I-BALANCE</a>
+        <img class="logo" src="../images/logo.png">
+        <div class="header-right">
+            <a href="../index.html">Home</a>
+            <a class="active" href="../view/dailytask.html">Today</a>
+            <a href="categories.html">Categories</a>
+            <a href="progress.html">Progress</a>
+            <a class="login" href="login.html">Login</a>
+            <a class="hidden-error logout" href="login.html">Logout</a>
+        </div>
+    </div>
+</header>
+
+<body>
+    <div id="directMessage">
+    <div id="directMessageEmailDiv">
+        <h1>Direct Message Your Friends</h1>
+        <p>Simply input your email in the input below and reach out to your friends if they have an account on I-Balance</p>
+        <form id="directMessageEmailForm" action="">
+            <label for="directMessageEmail">Email</label>
+            <input type="text" name="directMessageEmail" id="directMessageEmailInput">
+            <button id="myBtn" type=submit>Message</button>
+        </form>
+    </div>
+
+    <div>
+        <img src="../images/social.jpg" alt="students outside" id="directMessagePageImg">
+    </div>
+
+    <!-- Trigger/Open The add task Modal -->
+    <div id="myModal" class="modal">
+        
+    </div>
+</div>
+</body>
+
+<footer id="main-footer">
+    <p>&copy;I-Balance | Attributions | Team <span id="currentDate"></span></p>
+</footer>
+
+
+<script src="/js/dataservice.js"></script>
+<script src="https://cdn.socket.io/4.4.0/socket.io.min.js" integrity="sha384-1fOn6VtTq3PWwfsOrk45LnYcGosJwzMHv+Xh/Jx5303FVOXzEnw0EpLv30mtjmlj" crossorigin="anonymous"></script>
+
+<!-- <script type="module">
+    import { io } from "https://cdn.socket.io/4.3.2/socket.io.esm.min.js";
+</script> -->
+
+<!-- <script src="/socket.io/socket.io.js"></script> -->
+<!-- <script>
+    const socket = io();
+</script> -->
+
+<script type='module' src="/js/direct-message-modal.js"></script>
+
+</html>
