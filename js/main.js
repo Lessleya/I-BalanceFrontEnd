@@ -1,42 +1,49 @@
+
 import { loadHeaderFooter } from "./utils.js";
 
 loadHeaderFooter();
 
-function categories(category) {
-    var title_element = document.getElementById("categoryTitle");
-    var BackgroundColor = "#f3a87c";
-    // var logo = document.getElementsById("category-logo").;
+function categories(category){
 
-    switch (category) {
-        case "spiritual":
-            title_element.innerHTML = "Spiritual";
-            document.getElementById("category-logo").src =
-                "../images/spiritual-logo.png";
-            document.getElementById("hero-today").style.backgroundColor =
-                BackgroundColor;
+  var title_element = document.getElementById("categoryTitle");
+  var backgroundColor_spiritual="#FFDA92"; 
+  var backgroundColor_intellectual = "#9EE0D8";
+  var backgroundColor_social = "#BBE09E";
+  var backgroundColor_physical ="#A1E7FD";
 
-            break;
-        case "intelectual":
-            title_element.innerHTML = "Intelectual";
-            document.getElementById("category-logo").src =
-                "../images/intelectual-logo.png";
+  // var logo = document.getElementsById("category-logo").;
 
-            break;
+    switch(category) {
+        case 'spiritual':
 
-        case "social":
-            title_element.innerHTML = "Social";
-            document.getElementById("category-logo").src =
-                "../images/social-logo.png";
-        
+          title_element.innerHTML="Spiritual";
+          document.getElementById("category-logo").src="../images/spiritual-logo.png";
+          document.getElementById("category-image").src="../images/spiritual-image.png";
+          document.getElementById("hero-today").style.backgroundColor=backgroundColor_spiritual;
+
           break;
+          
         case 'intellectual':
           title_element.innerHTML="Intellectual";
           document.getElementById("category-logo").src="../images/intellectual-logo.png";
+          document.getElementById("category-image").src="../images/intellectual-image.png";
+          document.getElementById("hero-today").style.backgroundColor=backgroundColor_intellectual;
 
-        case "physical":
-            title_element.innerHTML = "Physical";
-            document.getElementById("category-logo").src =
-                "../images/physical-logo.png";
+          break;
+
+        case 'social':
+          title_element.innerHTML="Social";
+          document.getElementById("category-logo").src="../images/social-logo.png";
+          document.getElementById("category-image").src="../images/social-image.png";
+          document.getElementById("hero-today").style.backgroundColor=backgroundColor_social;
+
+        break;
+
+        case'physical':
+        title_element.innerHTML="Physical";
+        document.getElementById("category-logo").src="../images/physical-logo.png";
+        document.getElementById("category-image").src="../images/physical-image.png";
+        document.getElementById("hero-today").style.backgroundColor=backgroundColor_physical;
 
             break;
 
