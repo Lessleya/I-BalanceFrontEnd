@@ -9,7 +9,7 @@ async function processLogin(e) {
   };
   const test = await DataService.post(data, 'login');
   console.log(test)
-  //window.location.replace('../view/dailytask.html')
+  window.location.replace('../view/dailytask.html')
 }
 
 document.querySelector('.js-register').addEventListener('click', showRegister);
@@ -44,7 +44,7 @@ async function processRegister(e) {
     _csrf: _csrf,
   };
   await DataService.post(data, 'signup');
-  //window.location.replace('../view/dailytask.html')
+  window.location.replace('../view/dailytask.html')
 }
 document.querySelector('.logout').addEventListener('submit', processLogout);
 async function processLogout(e){
