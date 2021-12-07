@@ -10,7 +10,7 @@
     --white: #ffffff;
     --yellow: #f0c70f;
     --spiritual_color: #FFDA92;
-    --intelectuaal_color: #9EE0D8; 
+    --intellectual_color: #9EE0D8; 
     --social_color: #BBE09E;
     --physical_color: #A1E7FD;
 }
@@ -322,13 +322,13 @@ footer {
     background-color: var(--spiritual_color);
 }
 
-.spiritual-link, .intelectual-link, .physical-link, .social-link{
+.spiritual-link, .intellectual-link, .physical-link, .social-link{
     text-decoration: none;
 }
 
 .intellectual {
     grid-column: 2;
-    background-color: var(--intelectuaal_color);
+    background-color: var(--intellectual_color);
 }
 
 .social {
