@@ -1,6 +1,5 @@
-async function isloggedin() {
+export default async function isloggedin() {
     let loggedin = await DataService.get('is-logged-in')
-    console.log(loggedin)
     if(loggedin.loggedIn != true){
         document.querySelector('.logout').classList.add('hidden-error')
         document.querySelector('.login').classList.remove('hidden-error')
@@ -11,6 +10,6 @@ async function isloggedin() {
         document.querySelector('.login').classList.add('hidden-error')
         document.querySelector('.logout').classList.remove('hidden-error')
     }
+    return loggedin.email
 }
-
-isloggedin();
+isloggedin()
