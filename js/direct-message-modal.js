@@ -1,11 +1,28 @@
 // const socket = io();
 const socket = io("https://cse341-ibalance-api.herokuapp.com/", {transports: ['websocket']});
 
-socket.emit('news', 'hello');
 
-socket.on('news-response', function(data){
-    console.log(data);   //should output 'hello world'
-});
+document.getElementById('myBtn').addEventListener("click", loadDirectMessageContent)
+
+function loadDirectMessageContent(){
+    
+    socket.emit('news', 'hello');
+    socket.on('news-response', function(data){
+        console.log(data);   //should output 'hello world'
+        try{
+            let dmc = document.getElementById('directMessageContent');
+            dmc.innerHTML = data;
+        }
+    
+        catch{
+    
+        }
+    
+    });
+}
+
+
+
 
 
 document.getElementById('directMessageEmailForm').addEventListener("submit", messageUserByEmail);
