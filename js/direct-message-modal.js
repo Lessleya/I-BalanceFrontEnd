@@ -1,3 +1,13 @@
+// const socket = io();
+const socket = io("https://cse341-ibalance-api.herokuapp.com/", {transports: ['websocket']});
+
+socket.emit('news', 'hello');
+
+socket.on('news-response', function(data){
+    console.log(data);   //should output 'hello world'
+});
+
+
 document.getElementById('directMessageEmailForm').addEventListener("submit", messageUserByEmail);
 
 
