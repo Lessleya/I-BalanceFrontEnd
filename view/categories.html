@@ -1,43 +1,71 @@
-* { box-sizing: border-box; margin: 0; padding: 0; font-family: "Raleway", sans-serif; } :root { --blue: #1faafa; --white: #ffffff; --yellow: #f0c70f; --spiritual_color: #FFDA92; --intellectual_color: #9EE0D8; --social_color: #BBE09E; --physical_color:
-#A1E7FD; } /*Header*/ .navbar { background: var(--blue); height: 90px; display: flex; justify-content: center; align-items: center; font-size: 1rem; font-weight: bold; position: sticky; top: 0; z-index: 999; } .navbar__container { display: flex; justify-content:
-space-between; height: 80px; width: 100%; max-width: 1300px; margin: 0 auto; padding: 0 50px; } #navbar__logo { color: var(--white); font-family: 'Bebas Neue', cursive; font-size: 3rem !important; display: flex; align-items: center; cursor: pointer; text-decoration:
-none; } .fa-gem { margin-right: 0.5rem; width: 15%; } .navbar__menu { display: flex; align-items: center; list-style: none; text-align: center; } .navbar__item { height: 80px; } .navbar__links { color: var(--white); display: flex; align-items: center;
-justify-content: center; text-decoration: none; padding: 0 1rem; height: 100%; } .navbar__btn { display: flex; justify-content: center; align-items: center; padding: 0 1rem; width: 100%; } .button { display: flex; justify-content: center; align-items:
-center; text-decoration: none; padding: 10px 20px; width: 100%; border: none; outline: none; border-radius: 4px; background: white; color: var(--blue) } .button:hover { background: var(--yellow); transition: all 0.3s ease; color: black; } .navbar__links:hover
-{ color: var(--yellow); transition: all 0.3s ease; } /* Hero Image */ .main__container { display: grid; grid-template-columns: 1fr 1fr; align-items: center; justify-self: center; margin: 0 auto; height: 90vh; z-index: 1; width: 100%; max-width: 1300px;
-padding: 0 50px; } .main__content h1 { font-size: 5rem; color: var(--blue); font-size: 2rem; } .hero-section img { width: 50%; float: right; } .main__btn { font-size: 1rem; background: var(--yellow); padding: 14px 32px; border-radius: 4px; margin-top:
-2rem; cursor: pointer; position: relative; transition: all 0.35s; outline: none; border: solid 5px var(--yellow); } .main__btn a { position: relative; z-index: 2; color: black; text-decoration: none; font-weight: bold; font-size: 1.5rem; } .main__btn:hover
-{ background: var(--white); transition: all 0.5s ease; } #main__img { height: 100%; width: 100%; } /****************************** ******************************/ footer { background-color: var(--blue); padding: 30px; font-family: "Raleway", sans-serif;
-font-size: 16px; color: white; } #hero-today { background-color: var(--yellow); color: black; max-height: 40%; text-align: center; } #hero-today h1 { text-transform: uppercase; margin: 0; padding-bottom: 10px; } .icon-img { display: block; margin-left:
-auto; margin-right: auto; width: 15%; } /****************************** LOGIN ******************************/ /* Form */ .form { position: relative; z-index: 1; background: #FFFFFF; margin: 0 auto 100px; padding: 30px; border-top-left-radius: 3px; border-top-right-radius:
-3px; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; text-align: center; } .form .thumbnail { width: 150px; height: 150px; margin: 0 auto 30px; padding: 50px 30px; border-top-left-radius: 100%; border-top-right-radius: 100%; border-bottom-left-radius:
-100%; border-bottom-right-radius: 100%; box-sizing: border-box; } .form .thumbnail img { display: block; width: 100%; } .form input { outline: 0; background: #f2f2f2; width: 100%; border: 0; margin: 0 0 15px; padding: 15px; border-top-left-radius: 3px;
-border-top-right-radius: 3px; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; box-sizing: border-box; font-size: 14px; } .form button { outline: 0; background: #1faafa; width: 100%; border: 0; padding: 15px; border-top-left-radius: 3px;
-border-top-right-radius: 3px; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; color: #FFFFFF; font-size: 14px; transition: all 0.3 ease; cursor: pointer; } .form .message { margin: 15px 0 0; color: #b3b3b3; font-size: 12px; } .form .message
-a { color: #EF3B3A; text-decoration: none; } .hidden-error { display: none; } .container { position: relative; z-index: 1; max-width: 300px; margin: 0 auto; } .container:before, .container:after { content: ""; display: block; clear: both; } .container
-.info { margin: 50px auto; text-align: center; } .container .info h1 { margin: 0 0 15px; padding: 0; font-size: 36px; font-weight: 300; color: #1a1a1a; } .container .info span { color: #4d4d4d; font-size: 12px; } .container .info span a { color: #000000;
-text-decoration: none; } .container .info span .fa { color: #EF3B3A; } /****************************** CATEGORIES ******************************/ .spiritual, .intellectual, .social, .physical { background-color: var(--blue); width: 400px; height: 200px;
-margin-left: auto; margin-right: auto; margin-top: 25px; text-align: center; padding: 10px; border-radius: 25px; color: white; } .image-box { border-radius: 50%; width: 100px; height: 100px; font-size: 15px; } .main-categories { display: grid; grid-template-columns:
-1fr 1fr; } .spiritual { grid-column: 1; background-color: var(--spiritual_color); } .spiritual-link, .intellectual-link, .physical-link, .social-link { text-decoration: none; } .intellectual { grid-column: 2; background-color: var(--intellectual_color);
-} .social { grid-column: 1; background-color: var(--social_color); } .physical { grid-column: 2; background-color: var(--physical_color); } .title-categories { grid-column: 1/3; text-align: center; } #category-logo { max-width: 100px; } .shadow { color:
-white; text-shadow: 1px 1px 2px #000000; } #category-paragraph { font-size: 25px; } #category-logo { max-width: 200px; max-height: 200px; } /******************** LARGE SCREEN ***************************/ @media only screen and (min-width: 1028PX) { #hero-today
-{ display: grid; grid-template-columns: 1fr 1fr; } .category-header { grid-column-start: 1; } .category-header { display: grid; grid-template-columns: 30% 1fr; } #category-logo { justify-self: right; align-self: center; } #categoryTitle { font-size: 65px;
-text-align: left; align-self: center; color: white; text-shadow: 1px 1px 2px #000000; } #category-paragraph { grid-column-start: 1; } #category-image { grid-column-start: 2; grid-row: 1/2; max-width: 600px; max-height: 400px; } } /******************************
-FOOTER ******************************/ footer { background-color: var(--blue); max-width: 100%; text-align: center; font-size: 17px; margin-top: 20px; padding-top: 5px; padding-bottom: 5px; } /********************** Add Task **********************/ /*
-The Modal (background) */ .modal { display: none; /* Hidden by default */ position: fixed; /* Stay in place */ z-index: 1; /* Sit on top */ left: 0; top: 0; width: 100%; /* Full width */ height: 100%; /* Full height */ overflow: auto; /* Enable scroll
-if needed */ background-color: rgb(0, 0, 0); /* Fallback color */ background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */ } /* The Close Button */ .close { color: rgb(255, 251, 251); float: right; font-size: 28px; font-weight: bold; } .close:hover,
-.close:focus { color: black; text-decoration: none; cursor: pointer; } /* Modal Content */ .modal-content { position: relative; background-color: #fefefe; margin: auto; padding: 0; border: 1px solid #888; width: 30%; /* height: 40%; */ margin-top: 50px;
-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); animation-name: animatetop; animation-duration: 0.4s } /* Add Animation */ @keyframes animatetop { from { top: -300px; opacity: 0 } to { top: 0; opacity: 1 } } .modal-body input,
-.modal-body button, .modal-body textarea { margin-bottom: 20px; } .modal-body button { margin-top: 20px; } form textarea { display: block; } /* Modal Header */ .modal-header { padding: 2px 16px; background-color: #1faafa; color: white; } .default-input-style
-{ color: rgb(173, 172, 172); } /* Modal Body */ .modal-body { padding: 2px 16px; } .modal-content input { display: flex; flex-direction: column; } #task-cont { margin: 100px; } #task-cont ul { padding: 0px; } #task-cont ul li { list-style: none; width:
-100%; padding: 15px; cursor: pointer; border: 1px solid gray; background-color: rgb(255, 255, 255); margin: 20px; } #task-cont input[type=text] { width: 100%; padding: 15px; cursor: pointer; } #task-list>li, #task-list>li>form { display: flex; align-items:
-center; } .editTask { height: 1.5em; justify-content: space-between; flex-grow: 1; } #addNewTask textarea { max-width: 300px; /* max-height: 100px; */ } /* Direct message by email DIV */ #directMessageEmailDiv { text-align: center; } #directMessageEmailDiv
-button { margin-top: 15px; } #directMessagePageImg { margin-top: 20px; margin-left: auto; margin-right: auto; display: block; max-width: 50%; } /* The Modal (background) */ #directMessage .modal { display: none; /* Hidden by default */ position: fixed;
-/* Stay in place */ z-index: 1; /* Sit on top */ left: 0; top: 0; width: 100%; /* Full width */ height: 100%; /* Full height */ overflow: auto; /* Enable scroll if needed */ background-color: rgb(0, 0, 0); /* Fallback color */ background-color: rgba(0,
-0, 0, 0.4); /* Black w/ opacity */ } /* Modal Content */ #directMessage .modal-content { position: relative; background-color: #fefefe; margin: auto; padding: 0; border: 1px solid #888; width: 30%; /* height: 40%; */ margin-top: 50px; box-shadow: 0 4px
-8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); animation-name: animatetop; animation-duration: 0.4s } /* Add Animation */ @keyframes animatetop { from { top: -300px; opacity: 0 } to { top: 0; opacity: 1 } } /* Modal Header */ #directMessage
-.modal-header { padding: 2px 16px; background-color: #1faafa; color: white; } /* Modal Body */ #directMessage .modal-body { padding: 2px 16px; } #directMessage #directMessageInputSection { padding-bottom: 20px; padding-top: 20px } #directMessageForm {
-display: flex; justify-content: space-between; /* flex-direction: row; */ border: 2px solid rgb(134, 129, 129); border-radius: 5px; } #directMessageForm button { margin-right: 10px; border: 0; color: #0095f6; color: rgba(var(--d69, 0, 149, 246), 1); display:
-inline; padding: 0; position: relative; } #directMessage textarea { background-color: transparent; border: 0; overflow: auto; padding: 8px 9px; resize: none; max-width: 100%; /* max-height: 100px; */ } #directMessage textarea:focus { outline: none; /*
-max-height: 100px; */ } /******************* Util *****************************/ .blue-button { outline: 0; background: #1faafa; width: 100%; border: 0; padding: 15px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-left-radius:
-3px; border-bottom-right-radius: 3px; color: #FFFFFF; font-size: 14px; transition: all 0.3 ease; cursor: pointer; }
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="" content="width=device-width, initial-scale=1.0">
+
+    <title>I-Balance</title>
+    <meta name="description" content="App to help manage your time ">
+    <!-- style -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/mobile.css">
+    <!-- JavaScript -->
+    <script src="../js/main.js" type="module"></script>
+    <!-- Fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@200&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon">
+</head>
+
+
+<header id="main-header"> </header>
+
+
+
+<body>
+
+    <div class="main">
+        <h1>Home</h1>
+    </div>
+
+
+    <footer id="main-footer">
+    </footer>
+
+    <script src="/js/dataservice.js"></script>
+    <script type='module' src="/js/check-login.js"></script>
+
+</html> <img class="image-box" src="../images/physical-logo.png" alt="physical">
+<h2>Physical</h2>
+</div>
+</a>
+
+<a href="category-tasks.html?category=intellectual">
+    <div class="intellectual">
+        <img class="image-box" src="../images/intellectual-logo.png" alt="intellectual">
+        <h2>Intellectual</h2>
+    </div>
+</a>
+
+<a href="category-tasks.html?category=social">
+    <div class="social">
+        <img class="image-box" src="../images/social-logo.png" alt="social">
+        <h2>Social</h2>
+    </div>
+</a>
+
+
+</div>
+
+<footer id="main-footer">
+
+</footer>
+<script src="/js/dataservice.js"></script>
+<script type='module' src="/js/check-login.js"></script>
+
+</body>
+
+</html>
