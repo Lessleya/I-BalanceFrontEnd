@@ -1,0 +1,153 @@
+username: test8@test.com 
+password: asdfasdf
+
+Endpoints:
+  GET:
+    'admin':
+      RETURNS:
+        {}
+    '':
+      RETURNS:
+        {_csrf: csrf token}
+    'reset/{token}':
+      RETURNS:
+        {
+          errorMessage: String,
+          userId: String,
+          passwordToken: String
+        }
+    'daily-tasks':
+      RETURNS:
+        {
+          task: List[{
+            category: String,
+            title: String,
+            date: Date,
+            completed: Boolean,
+            userId: String,
+            repeatId: String (opt),
+            notes: String (opt)
+          }]
+        }
+  POST:
+    'login':
+      NEEDS:
+        {
+          email: String,
+          password: String
+        }
+      RETURNS:
+        ON SUCCESS:
+          {
+            success: True
+          }
+        ON FAILURE:
+          {
+            success: False,
+            errorMessage: String
+          }
+    'signup':
+      NEEDS:
+        {
+          name: String,
+          email: String,
+          password: String,
+          confirmPassword: String,
+          admin: Boolean (opt)
+        }
+      RETURNS:
+        ON SUCCESS:
+          {
+            success: True
+          }
+        ON FAILURE:
+          { 
+            success: False,
+            errorMessage: String
+          }
+    'logout':
+      RETURNS:
+        {
+          success: True
+        }
+    'reset':
+      RETURNS:
+        ON SUCCESS:
+          {
+            Success: True
+          }
+        ON FAILURE:
+          {
+            success: False,
+            errorMessage: String
+          }
+    'new-password':
+      NEEDS:
+        {
+          password: String,
+          passwordToken: String
+        }
+      RETURNS:
+        ON SUCCESS:
+          {
+            success: True
+          }
+        ON FAILURE:
+          {
+            success: False,
+            errorMessage: String
+          }
+    'add-task':
+      NEEDS:
+        {
+          taskTitle: String,
+          taskCategory: ['physical', 'spiritual', 'intellectual', 'social'] (one-of),
+          taskDueDate: Date,
+          taskNotes: String,
+          taskRepeats: ['monday','tuesday','wednesday','thursday','friday','saturday','sunday'] (none, one, or many of)
+        }
+      RETURNS:
+        ON SUCCESS:
+          {
+            success: True
+          }
+        ON FAILURE:
+          {
+            success: False,
+            errorMessage: String
+          }
+    'edit-task':
+      NEEDS:
+        {
+          taskId: String,
+          taskTitle: String,
+          taskCategory: ['physical', 'spiritual', 'intellectual', 'social'] (one-of),
+          taskCompletionStatus: Boolean
+          taskDueDate: Date,
+          taskNotes: String
+        }
+      RETURNS:
+        ON SUCCESS:
+          {
+            success: True
+          }
+        ON FAILURE:
+          {
+            success: False,
+            errorMessage: String
+          }
+    'delete-task':
+      NEEDS:
+        {
+          taskId: String
+        }
+      RETURNS:
+        ON SUCCESS:
+          {
+            success: True
+          }
+        ON FAILURE:
+          {
+            success: False,
+            errorMessage: String
+          }

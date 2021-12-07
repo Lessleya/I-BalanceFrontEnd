@@ -27,8 +27,11 @@ function categories(category) {
             title_element.innerHTML = "Social";
             document.getElementById("category-logo").src =
                 "../images/social-logo.png";
-
-            break;
+        
+          break;
+        case 'intellectual':
+          title_element.innerHTML="Intellectual";
+          document.getElementById("category-logo").src="../images/intellectual-logo.png";
 
         case "physical":
             title_element.innerHTML = "Physical";
