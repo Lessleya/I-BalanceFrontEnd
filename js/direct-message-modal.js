@@ -1,16 +1,37 @@
 import isLoggedIn from './check-login.js'
 const socket = io("https://cse341-ibalance-api.herokuapp.com/", {transports: ['websocket']});
 
+<<<<<<< HEAD
+=======
 isLoggedIn().then(email => {
     console.log(email)
     socket.emit('name', email)    
 })
 
 socket.emit('news', 'hello');
+>>>>>>> b88979e0ea6aaee2d110aed0e3ec3abbc2a359bb
 
-socket.on('news-response', function(data){
-    console.log(data);   //should output 'hello world'
-});
+document.getElementById('myBtn').addEventListener("click", loadDirectMessageContent)
+
+function loadDirectMessageContent(){
+    
+    socket.emit('news', 'hello');
+    socket.on('news-response', function(data){
+        console.log(data);   //should output 'hello world'
+        try{
+            let dmc = document.getElementById('directMessageContent');
+            dmc.innerHTML = data;
+        }
+    
+        catch{
+    
+        }
+    
+    });
+}
+
+
+
 
 
 document.getElementById('directMessageEmailForm').addEventListener("submit", messageUserByEmail);
