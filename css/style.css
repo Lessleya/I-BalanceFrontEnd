@@ -49,6 +49,7 @@
 
 .fa-gem {
     margin-right: 0.5rem;
+    width: 15%;
 }
 
 .navbar__menu {
@@ -108,9 +109,60 @@
 
 /* Hero Image */
 
+.main__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-self: center;
+    margin: 0 auto;
+    height: 90vh;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    padding: 0 50px;
+}
+
+.main__content h1 {
+    font-size: 5rem;
+    color: var(--blue);
+    font-size: 2rem;
+}
+
 .hero-section img {
     width: 50%;
     float: right;
+}
+
+.main__btn {
+    font-size: 1rem;
+    background: var(--yellow);
+    padding: 14px 32px;
+    border-radius: 4px;
+    margin-top: 2rem;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.35s;
+    outline: none;
+    border: solid 5px var(--yellow);
+}
+
+.main__btn a {
+    position: relative;
+    z-index: 2;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.main__btn:hover {
+    background: var(--white);
+    transition: all 0.5s ease;
+}
+
+#main__img {
+    height: 100%;
+    width: 100%;
 }
 
 
@@ -131,7 +183,7 @@ footer {
     text-align: center;
 }
 
-#hero-today h1{
+#hero-today h1 {
     text-transform: uppercase;
     margin: 0;
     padding-bottom: 10px;
@@ -142,21 +194,6 @@ footer {
     margin-left: auto;
     margin-right: auto;
     width: 15%;
-}
-
-@media screen and (max-width: 500px) {
-    .header a {
-        float: none;
-        display: block;
-        text-align: left;
-    }
-
-    .header-right {
-        float: none;
-    }
-    .logo {
-        width: 30%;
-    }
 }
 
 
@@ -353,10 +390,11 @@ footer {
 }
 
 
-
 /********************** Add Task **********************/
 
+
 /* The Modal (background) */
+
 .modal {
     display: none;
     /* Hidden by default */
@@ -378,7 +416,9 @@ footer {
     /* Black w/ opacity */
 }
 
+
 /* The Close Button */
+
 .close {
     color: rgb(255, 251, 251);
     float: right;
@@ -395,6 +435,7 @@ footer {
 
 
 /* Modal Content */
+
 .modal-content {
     position: relative;
     background-color: #fefefe;
@@ -409,20 +450,23 @@ footer {
     animation-duration: 0.4s
 }
 
+
 /* Add Animation */
+
 @keyframes animatetop {
     from {
         top: -300px;
         opacity: 0
     }
-
     to {
         top: 0;
         opacity: 1
     }
 }
 
-.modal-body input, .modal-body button, .modal-body textarea {
+.modal-body input,
+.modal-body button,
+.modal-body textarea {
     margin-bottom: 20px;
 }
 
@@ -434,7 +478,9 @@ form textarea {
     display: block;
 }
 
+
 /* Modal Header */
+
 .modal-header {
     padding: 2px 16px;
     background-color: #1faafa;
@@ -445,45 +491,46 @@ form textarea {
     color: rgb(173, 172, 172);
 }
 
+
 /* Modal Body */
+
 .modal-body {
     padding: 2px 16px;
 }
-
 
 .modal-content input {
     display: flex;
     flex-direction: column;
 }
 
-#task-cont{
+#task-cont {
     margin: 100px;
 }
 
-#task-cont ul{
+#task-cont ul {
     padding: 0px;
 }
 
-#task-cont ul li{
+#task-cont ul li {
     list-style: none;
     width: 100%;
     padding: 15px;
-    cursor:pointer;
+    cursor: pointer;
     border: 1px solid gray;
     background-color: rgb(255, 255, 255);
     margin: 20px;
 }
 
-#task-cont input[type=text]{
+#task-cont input[type=text] {
     width: 100%;
     padding: 15px;
-    cursor:pointer;
+    cursor: pointer;
 }
 
-#task-list>li, #task-list>li>form {
+#task-list>li,
+#task-list>li>form {
     display: flex;
     align-items: center;
-    
 }
 
 .editTask {
@@ -492,22 +539,23 @@ form textarea {
     flex-grow: 1;
 }
 
-#addNewTask textarea{
+#addNewTask textarea {
     max-width: 300px;
     /* max-height: 100px; */
 }
 
 
 /* Direct message by email DIV */
-#directMessageEmailDiv{
+
+#directMessageEmailDiv {
     text-align: center;
 }
 
-#directMessageEmailDiv button{
+#directMessageEmailDiv button {
     margin-top: 15px;
 }
 
-#directMessagePageImg{
+#directMessagePageImg {
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
@@ -516,9 +564,8 @@ form textarea {
 }
 
 
-
-
 /* The Modal (background) */
+
 #directMessage .modal {
     display: none;
     /* Hidden by default */
@@ -540,7 +587,9 @@ form textarea {
     /* Black w/ opacity */
 }
 
+
 /* Modal Content */
+
 #directMessage .modal-content {
     position: relative;
     background-color: #fefefe;
@@ -555,32 +604,37 @@ form textarea {
     animation-duration: 0.4s
 }
 
+
 /* Add Animation */
+
 @keyframes animatetop {
     from {
         top: -300px;
         opacity: 0
     }
-
     to {
         top: 0;
         opacity: 1
     }
 }
 
+
 /* Modal Header */
+
 #directMessage .modal-header {
     padding: 2px 16px;
     background-color: #1faafa;
     color: white;
 }
 
+
 /* Modal Body */
+
 #directMessage .modal-body {
     padding: 2px 16px;
 }
 
-#directMessage #directMessageInputSection{
+#directMessage #directMessageInputSection {
     padding-bottom: 20px;
     padding-top: 20px
 }
@@ -593,81 +647,34 @@ form textarea {
     border-radius: 5px;
 }
 
-#directMessageForm button{
+#directMessageForm button {
     margin-right: 10px;
     border: 0;
     color: #0095f6;
-    color: rgba(var(--d69,0,149,246),1);
+    color: rgba(var(--d69, 0, 149, 246), 1);
     display: inline;
     padding: 0;
     position: relative;
 }
 
-#directMessage textarea{
+#directMessage textarea {
     background-color: transparent;
     border: 0;
     overflow: auto;
     padding: 8px 9px;
     resize: none;
     max-width: 100%;
-    width: 500px;
-    height: 40px;
-
     /* max-height: 100px; */
 }
 
-#directMessage textarea:focus{
+#directMessage textarea:focus {
     outline: none;
-
-
     /* max-height: 100px; */
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /******************* Util *****************************/
+
 .blue-button {
     outline: 0;
     background: #1faafa;
