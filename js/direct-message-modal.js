@@ -1,44 +1,46 @@
 import isLoggedIn from './check-login.js'
 const socket = io("https://cse341-ibalance-api.herokuapp.com/", {transports: ['websocket']});
 
-<<<<<<< HEAD
-=======
 isLoggedIn().then(email => {
     console.log(email)
     socket.emit('name', email)    
 })
 
 socket.emit('news', 'hello');
->>>>>>> b88979e0ea6aaee2d110aed0e3ec3abbc2a359bb
 
-document.getElementById('myBtn').addEventListener("click", loadDirectMessageContent)
+socket.on('ack', (data) => {
+    console.log('here')
+    console.log(data);
+    console.log('here2')
+    if (data.connected)
+    {
+        console.log('click is working')
+        document.getElementById('myBtn').addEventListener("click", loadDirectMessageContent)
+    }
+})
+
 
 function loadDirectMessageContent(){
+    messageUserByEmail();
+    socket.emit('messageTo', document.getElementById('directMessageEmailInput').value);
     
-    socket.emit('news', 'hello');
-    socket.on('news-response', function(data){
+    socket.on('messageData', function(data){
+        console.log('recieve data')
         console.log(data);   //should output 'hello world'
-        try{
-            let dmc = document.getElementById('directMessageContent');
-            dmc.innerHTML = data;
+        let dmc = document.getElementById('directMessageContent');
+        
+        if(data['connected'] == false){
+            dmc.innerHTML = "<p>No user was found</p>"
         }
-    
-        catch{
-    
+        else{
+            dmc.innerHTML = data;
         }
     
     });
 }
 
-
-
-
-
-document.getElementById('directMessageEmailForm').addEventListener("submit", messageUserByEmail);
-
-
-function messageUserByEmail(e){
-    e.preventDefault();
+function messageUserByEmail(){
+    // e.preventDefault();
 
     let modal = document.getElementById('myModal');
     modal.innerHTML = `<div class="modal-content">
