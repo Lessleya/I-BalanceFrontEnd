@@ -1,37 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="" content="width=device-width, initial-scale=1.0">
-
-    <title>I-Balance</title>
-    <meta name="description" content="App to help manage your time ">
-    <!-- style -->
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/mobile.css">
-    <!-- JavaScript -->
-    <script src="../js/main.js" type="module"></script>
-    <!-- Fonts  -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@200&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon">
-</head>
-
-
-<header id="main-header">
-</header>
-  <body>
-    <div class="hero-today">
-        <img class="icon-img" src="../images/calendar.png" alt="icon">
-        <h1 id="currentDate">Thursday, November 11, 2021</h1>
-    </div>
-
-<footer id="main-footer">
-</footer>
-<script src="/js/dataservice.js"></script>
-<script type='module' src="/js/check-login.js"></script>
-
-</html>
+<li class="liClickEdit">
+    <form class="editTask getTaskId">
+        <h2 class="task_title">${task.title}</h2>
+        <input type=hidden name="taskId" value="${task._id}">
+        <input type=hidden name="taskTitle" value="${task.title}">
+        <input type=hidden name="taskCategory" value="${task.category}">
+        <input type=hidden name="taskDate" value="${task.date}">
+        <input type=hidden name="taskCompleted" value="${task.completed}">
+        <input type=hidden name="taskNotes" value="${task.notes}">
+        <button type=submit value="Edit">E</button>
+    </form>
+    <form class="deleteTask getTaskId">
+        <input type=hidden name="taskName" value="${task._id}">
+        <button type=submit value="Delete">D</button>
+    </form>
+</li>

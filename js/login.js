@@ -46,6 +46,36 @@ async function processRegister(e) {
   await DataService.post(data, 'signup');
   window.location.replace('../view/dailytask.html')
 }
+document.querySelector('.js-forgot').addEventListener('click', showReset);
+async function showReset(e){
+  e.preventDefault();
+  document.querySelector('.login-form').classList.add('hidden-error')
+  document.querySelector('.reset-form').classList.remove('hidden-error')
+}
+
+document.querySelector('.reset-form').addEventListener('submit', processReset);
+async function processReset(e){
+  e.preventDefault();
+  const data = {
+    email: document.getElementById('emailReset').value
+  };
+  DataService.post(data, 'reset')
+  document.querySelector('.reset-form').classList.add('hidden-error')
+  document.querySelector('.resetLogin-form').classList.remove('hidden-error')
+}
+document.querySelector('.resetLogin-form').addEventListener('submit', processResetLogin);
+async function processResetLogin(e){
+  e.preventDefault();
+  const data = {
+    token: document.getElementById('token').value,
+    email: document.getElementById('resetEmail').value,
+    password: document.getElementById('ResetPassword').value,
+    confirmPassword: document.getElementById('verifyResetPassword').value,
+  };
+  //DataService.postLogout(data, '')
+  document.querySelector('.resetLogin-form').classList.add('hidden-error')
+  document.querySelector('.login-form').classList.remove('hidden-error')
+}
 document.querySelector('.logout').addEventListener('submit', processLogout);
 async function processLogout(e){
   e.preventDefault();
