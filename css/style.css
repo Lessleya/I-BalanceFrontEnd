@@ -10,7 +10,7 @@
     --white: #ffffff;
     --yellow: #f0c70f;
     --spiritual_color: #FFDA92;
-    --intellectual_color: #9EE0D8; 
+    --intellectual_color: #9EE0D8;
     --social_color: #BBE09E;
     --physical_color: #A1E7FD;
 }
@@ -354,12 +354,15 @@ footer {
     grid-template-columns: 1fr 1fr;
 }
 
-.spiritual{
+.spiritual {
     grid-column: 1;
     background-color: var(--spiritual_color);
 }
 
-.spiritual-link, .intellectual-link, .physical-link, .social-link{
+.spiritual-link,
+.intellectual-link,
+.physical-link,
+.social-link {
     text-decoration: none;
 }
 
@@ -370,12 +373,12 @@ footer {
 
 .social {
     grid-column: 1;
-    background-color:var(--social_color);
+    background-color: var(--social_color);
 }
 
 .physical {
     grid-column: 2;
-    background-color:var(--physical_color);
+    background-color: var(--physical_color);
 }
 
 .title-categories {
@@ -383,16 +386,16 @@ footer {
     text-align: center;
 }
 
-#category-logo{
+#category-logo {
     max-width: 100px;
 }
 
-.shadow{
+.shadow {
     color: white;
     text-shadow: 1px 1px 2px #000000;
 }
 
-#category-paragraph{
+#category-paragraph {
     font-size: 25px;
 }
 
@@ -401,49 +404,44 @@ footer {
     max-height: 200px;
 }
 
+
 /******************** LARGE SCREEN ***************************/
-@media only screen and (min-width: 1028PX){
 
-#hero-today{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
-.category-header{
-    grid-column-start: 1;
-}
-
-.category-header{
-    display: grid;
-    grid-template-columns: 30% 1fr;
-}
-
-#category-logo{
-justify-self: right;
-align-self: center;
-}
-
-#categoryTitle{
-    font-size: 65px;
-    text-align: left;
-    align-self: center;
-    color: white;
-    text-shadow: 1px 1px 2px #000000;
-}
-
-#category-paragraph{
-    grid-column-start: 1;
-}
-#category-image{
-    grid-column-start: 2;
-    grid-row: 1/2;
-    max-width: 600px;
-    max-height: 400px;
-
+@media only screen and (min-width: 1028PX) {
+    #hero-today {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .category-header {
+        grid-column-start: 1;
+    }
+    .category-header {
+        display: grid;
+        grid-template-columns: 30% 1fr;
+    }
+    #category-logo {
+        justify-self: right;
+        align-self: center;
+    }
+    #categoryTitle {
+        font-size: 65px;
+        text-align: left;
+        align-self: center;
+        color: white;
+        text-shadow: 1px 1px 2px #000000;
+    }
+    #category-paragraph {
+        grid-column-start: 1;
+    }
+    #category-image {
+        grid-column-start: 2;
+        grid-row: 1/2;
+        max-width: 600px;
+        max-height: 400px;
+    }
 }
 
 
-}
 /****************************** FOOTER ******************************/
 
 footer {
