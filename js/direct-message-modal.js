@@ -1,13 +1,5 @@
-import isLoggedIn from './check-login.js';
-const socket = io('https://cse341-ibalance-api.herokuapp.com/', {
-  transports: ['websocket'],
-});
+import {socket} from './main.js'
 
-isLoggedIn().then(email => {
-  console.log(email);
-  socket.emit('name', email);
-  socket.email = email
-});
 
 socket.emit('news', 'hello');
 

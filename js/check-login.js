@@ -1,11 +1,11 @@
 import { DataService } from "./dataservice.js"
 
-export default async function isloggedin() {
+export async function isLoggedIn() {
     let loggedin = await DataService.get('is-logged-in')
     if(loggedin.loggedIn){
         document.querySelector('.logout').classList.remove('hidden-error')
         document.querySelector('.login').classList.add('hidden-error')
-        window.location.replace('../view/login.html')
+
 
     }
     else {
@@ -15,4 +15,3 @@ export default async function isloggedin() {
     }
     return loggedin.email
 }
-isloggedin()
