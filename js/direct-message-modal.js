@@ -12,27 +12,32 @@ socket.on('ack', (data) => {
     console.log('here')
     console.log(data);
     console.log('here2')
-    if (data.connected)
+    if (data.success)
     {
         console.log('click is working')
         document.getElementById('myBtn').addEventListener("click", loadDirectMessageContent)
+        console.log('click enabled')
     }
 })
 
 
 function loadDirectMessageContent(){
-    messageUserByEmail();
+    console.log('here3')
     socket.emit('messageTo', document.getElementById('directMessageEmailInput').value);
-    
+    console.log('here4')
     socket.on('messageData', function(data){
         console.log('recieve data')
         console.log(data);   //should output 'hello world'
         let dmc = document.getElementById('directMessageContent');
         
-        if(data['connected'] == false){
-            dmc.innerHTML = "<p>No user was found</p>"
-        }
+        // if(data['connected'] == false){
+            if(data['success'] == false){
+                alert('no user found')
+                // dmc.innerHTML = "<p>No user was found</p>"
+            }
         else{
+            console.log("user found")
+            messageUserByEmail();
             dmc.innerHTML = data;
         }
     
@@ -41,7 +46,6 @@ function loadDirectMessageContent(){
 
 function messageUserByEmail(){
     // e.preventDefault();
-
     let modal = document.getElementById('myModal');
     modal.innerHTML = `<div class="modal-content">
     <div class="modal-header">
@@ -58,28 +62,20 @@ function messageUserByEmail(){
     <div id="directMessageInputSection">
         <form id="directMessageForm">
         <textarea name="directMessageFormInput" id="directMessageFormInput" placeholder="Message..." height: 36px></textarea>
-        <button class="btn" type="submit">Send</button>
         </form>
+        <button class="btn" id="sendMessageId" onclick=sendMessage >Send</button>
     </div>
     
     </div>
     
 </div>`
 
-// Add-task Modal
-
-
-
-//     // Get the modal
-// var modal = document.getElementById("myModal");
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 // When the user clicks on the button, open the modal
-btn.onclick = function () {
+
 modal.style.display = "block";
-}
+
 // When the user clicks on <span> (x), close the modal
 span.onclick = function () {
 modal.style.display = "none";
@@ -92,10 +88,14 @@ modal.style.display = "none";
 }
 }
 
-
-
 // Modal section
 
+function sendMessage(){
+    let message = document.getElementById('directMessageFormInput');
+    let time = new Date.now()
+    let toEmail = document.getElementById('directMessageEmailInput').value;
+    socket.emit('sendMessage', {'message': message, 'date': time, 'toEmail': email});
 
+}
 
 
