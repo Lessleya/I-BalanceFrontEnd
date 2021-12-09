@@ -1,10 +1,12 @@
+import {addEditTask} from './dailytask.js';
+import {getParam} from './main.js'
 window.addEventListener("load", processTasks);
 
-async function processTasks() {
+export async function processTasks() {
     const category = getParam("category");
     const taskList = await DataService.get("daily-tasks");
 
-    categoryTaskList = taskList["task"].filter((task) => {
+    let categoryTaskList = taskList["task"].filter((task) => {
         return task.category == category;
     });
 

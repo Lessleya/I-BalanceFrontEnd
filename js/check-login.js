@@ -7,8 +7,8 @@ export default async function isloggedin() {
 
     }
     else {
-        document.querySelector('.login').classList.add('hidden-error')
-        document.querySelector('.logout').classList.remove('hidden-error')
+        //document.querySelector('.login').classList.add('hidden-error')
+        //document.querySelector('.logout').classList.remove('hidden-error')
     }
     return loggedin.email
 }
