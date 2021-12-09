@@ -1,4 +1,5 @@
-import {getParam} from './utils.js'
+import { getParam } from './utils.js'
+import {DataService} from './dataservice.js'
 
 window.addEventListener("load", processTasks);
 
