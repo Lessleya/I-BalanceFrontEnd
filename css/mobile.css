@@ -93,4 +93,8 @@
         .main__content h1 {
             font-size: 2.5rem;
         }
+        #main__img {
+            height: 50%;
+            width: 50%;
+        }
     }
