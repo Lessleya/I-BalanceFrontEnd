@@ -1,4 +1,16 @@
 import { loadHeaderFooter } from "./utils.js";
+import { isLoggedIn } from "./check-login.js";
+import "https://cdn.socket.io/4.4.0/socket.io.min.js";
+
+export const socket = io("https://cse341-ibalance-api.herokuapp.com/", {
+    transports: ["websocket"],
+});
+
+isLoggedIn().then((email) => {
+    console.log(email);
+    socket.emit("name", email);
+    socket.email = email;
+});
 
 loadHeaderFooter();
 
@@ -13,7 +25,9 @@ function categories(category) {
 
     switch (category) {
         case "spiritual":
-            title_element.innerHTML = "Spiritual";
+            if (titleElement) {
+                title_element.innerHTML = "Spiritual";
+            }
             document.getElementById("category-logo").src =
                 "../images/spiritual-logo.png";
             document.getElementById("category-image").src =
@@ -78,5 +92,23 @@ if (menu) {
         menu.classList.toggle("is-active");
         menuLinks.classList.toggle("active");
     });
-    
+}
+
+window.onscroll = function() {
+    myFunction();
+};
+
+// Get the header
+var header = document.getElementById("main-header");
+
+// Get the offset position of the navbar
+var sticky = header.offsetTop;
+
+// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+    if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+    } else {
+        header.classList.remove("sticky");
+    }
 }
