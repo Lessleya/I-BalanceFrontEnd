@@ -455,7 +455,33 @@ footer {
 }
 
 
-/********************** Add Task **********************/
+/********************** DAILY TASK **********************/
+#hero-daily{
+    background: #FDC80ED9;
+}
+
+.date-info{
+    padding-top: 50px;
+    text-align: center;
+}
+
+@media only screen and (min-width: 1028PX) {
+
+
+#hero-daily{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+
+.date-info{
+    margin: auto;
+    grid-column: 1;
+    font-size: 30px;
+}
+
+}
+
 
 
 /* The Modal (background) */
