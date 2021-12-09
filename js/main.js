@@ -6,11 +6,13 @@ export const socket = io("https://cse341-ibalance-api.herokuapp.com/", {
     transports: ["websocket"],
 });
 
-isLoggedIn().then(email => {
+loadHeaderFooter();
+
+isLoggedIn().then((email) => {
     console.log(email);
-    socket.emit('name', email);
-    socket.email = email
-  });
+    socket.emit("name", email);
+    socket.email = email;
+});
 
 function categories(category) {
   var titleElement = document.getElementById('categoryTitle');
