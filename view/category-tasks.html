@@ -5,64 +5,60 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="" content="width=device-width, initial-scale=1.0">
+
     <title>I-Balance</title>
     <meta name="description" content="App to help manage your time ">
     <!-- style -->
     <link rel="stylesheet" href="../css/style.css">
+
     <link rel="stylesheet" href="../css/mobile.css">
     <!-- JavaScript -->
     <script src="../js/main.js" type="module"></script>
+
     <!-- Fonts  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@200&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon">
 </head>
 
 <header id="main-header">
-
 </header>
 
-<div id="hero-daily" value="category=daily">
-    <div class="date-info">
-        <h1 id="month" name="month"> Month</h1>
-        <h1 id="weekday" name="weekday"> Weekday </h1>
-        <h1 id="day" name="day"> 1 </h1>
+
+
+<body>
+
+    <div id="hero-today" value="category=spiritual">
+        <div class="category-header">
+            <img id="category-logo" src="" alt="icon" name="category-logo">
+            <h1 id="categoryTitle" name="categoryTitle"> Title</h1>
+        </div>
+        <img id="category-image" src="" alt="icon" name="category-image">
+    </div>
+    <!-- Trigger/Open The add task Modal -->
+    <div id="myModal" class="modal">
+
     </div>
 
-    <img id="category-image" src="../images/daily-task.png" alt="icon" name="category-image">
-</div>
+    <div id="task-cont">
+        <ul>
 
-<div id="task-cont">
-    <ul>
-        <li id="myBtn" id="content"> + Add Task</li>
-    </ul>
-    <ul id="task-list">
+            <li id="myBtn" id="content"> + Add Task</li>
+        </ul>
+        <ul id="task-list">
 
-    </ul>
-</div>
+        </ul>
+    </div>
 
-
-<!-- <script type="module">
-    import { io } from "https://cdn.socket.io/4.3.2/socket.io.esm.min.js";
-</script> -->
-
-<!-- <script src="/socket.io/socket.io.js"></script> -->
-<!-- <script>
-    const socket = io();
-</script> -->
-
-<script src="../js/date.js" type='module'></script>
-<script src="../js/tasks-day.js" type='module'></script>
-<script src="../js/main.js" type="module"></script>
-<script src="../js/task-modal.js" type='module'></script>
-<script src="../js/task.js" type='module'></script>
-
-<footer id="main-footer">
-</footer>
-
-
-
+    <footer id="main-footer">
+    </footer>
+    <!-- JavaScript -->
+    <script src="../js/dataservice.js"></script>
+    <script type='module' src="/js/check-login.js"></script>
+    <script src="../js/main.js" type="module"></script>
+    <script src="../js/task-modal.js"></script>
+    <script src="../js/task.js"></script>
 
 </body>
 

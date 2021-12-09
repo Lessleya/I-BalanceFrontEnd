@@ -1,9 +1,6 @@
-<<<<<<< HEAD
-import { getParam } from './utils.js'
-import {DataService} from './dataservice.js'
+import { getParam } from "./utils.js";
+import { DataService } from "./dataservice.js";
 
-=======
->>>>>>> parent of 11ef73e (Merge branch 'main' of https://github.com/Lessleya/I-BalanceFrontEnd)
 window.addEventListener("load", processTasks);
 
 async function processTasks() {
