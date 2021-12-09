@@ -28,7 +28,6 @@ async function showLogin(e){
 document.querySelector('.register-form').addEventListener('submit', processRegister);
 async function processRegister(e) {
   e.preventDefault();
-  const _csrf = await DataService.getCsrfToken();
   fpassword = document.getElementById('password').value
   spassword = document.getElementById('verifyPassword').value
   if (fpassword != spassword){
@@ -41,7 +40,6 @@ async function processRegister(e) {
     email: document.getElementById('email').value,
     password: fpassword,
     confirmPassword: spassword,
-    _csrf: _csrf,
   };
   await DataService.post(data, 'signup');
   window.location.replace('../view/dailytask.html')
@@ -76,9 +74,10 @@ async function processResetLogin(e){
   document.querySelector('.resetLogin-form').classList.add('hidden-error')
   document.querySelector('.login-form').classList.remove('hidden-error')
 }
-document.querySelector('.logout').addEventListener('submit', processLogout);
+document.querySelector('.logout').addEventListener('click', processLogout);
 async function processLogout(e){
   e.preventDefault();
-  const _csrf = await DataService.getCsrfToken();
-  DataService.postLogout({_csrf}, 'logout')
+  DataService.post({}, 'logout').then(sucess => {
+    console.log(success)
+  })
 }

@@ -1,3 +1,5 @@
+import {getParam} from './utils.js'
+
 window.addEventListener("load", processTasks);
 
 async function processTasks() {

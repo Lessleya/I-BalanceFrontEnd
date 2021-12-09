@@ -13,7 +13,9 @@ function categories(category) {
 
     switch (category) {
         case "spiritual":
-            title_element.innerHTML = "Spiritual";
+            if (titleElement){
+                title_element.innerHTML = "Spiritual";
+            }
             document.getElementById("category-logo").src =
                 "../images/spiritual-logo.png";
             document.getElementById("category-image").src =

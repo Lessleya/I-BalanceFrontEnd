@@ -1,3 +1,5 @@
+import { DataService } from "./dataservice"
+
 export default async function isloggedin() {
     let loggedin = await DataService.get('is-logged-in')
     if(loggedin.loggedIn != true){
