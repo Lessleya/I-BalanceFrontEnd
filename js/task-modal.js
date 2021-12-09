@@ -14,7 +14,7 @@ btn.onclick = function () {
   modal.style.display = 'block';
 };
 
-function createModal(operation, data) {
+export function createModal(operation, data) {
   /* Set category = ?category*/
   let category;
   if (operation == 'add') {

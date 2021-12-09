@@ -1,4 +1,16 @@
 import { loadHeaderFooter } from "./utils.js";
+import { isLoggedIn } from "./check-login.js";
+import "https://cdn.socket.io/4.4.0/socket.io.min.js";
+
+export const socket = io("https://cse341-ibalance-api.herokuapp.com/", {
+    transports: ["websocket"],
+});
+
+isLoggedIn().then((email) => {
+    console.log(email);
+    socket.emit("name", email);
+    socket.email = email;
+});
 
 loadHeaderFooter();
 
@@ -13,7 +25,9 @@ function categories(category) {
 
     switch (category) {
         case "spiritual":
-            title_element.innerHTML = "Spiritual";
+            if (titleElement) {
+                title_element.innerHTML = "Spiritual";
+            }
             document.getElementById("category-logo").src =
                 "../images/spiritual-logo.png";
             document.getElementById("category-image").src =

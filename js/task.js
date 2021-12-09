@@ -1,5 +1,8 @@
 import {addEditTask} from './dailytask.js';
-import {getParam} from './main.js'
+import { getParam } from './utils.js'
+import { createModal } from './task-modal.js'
+import {DataService} from './dataservice.js'
+
 window.addEventListener("load", processTasks);
 
 export async function processTasks() {

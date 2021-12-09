@@ -1,7 +1,7 @@
 const apiUrl = 'https://cse341-ibalance-api.herokuapp.com/';
 // const apiUrl = 'http://localhost:3000/'
 
-class DataService {
+export class DataService {
   static async getCsrfToken() {
     const option = {
       method: 'get',
