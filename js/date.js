@@ -3,7 +3,7 @@ let date = new Date();
 let dayOfWeekNumber = date.getDay();
 let nameOfDay = "home";
 let month = date.getUTCMonth() + 1;
-var day = date.getUTCDate()-1;
+var day = date.getUTCDate();
 let monthName = "Month";
 
 switch(month){

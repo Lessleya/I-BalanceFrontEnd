@@ -25,48 +25,49 @@ function categories(category) {
 
   switch (category) {
     case 'spiritual':
-      if (titleElement) {
-        title_element.innerHTML = 'Spiritual';
-      }
-      //document.getElementById('category-logo').src =
-      //  '../images/spiritual-logo.png';
+    //   if (titleElement) {
+    //     title_element.innerHTML = 'Spiritual';
+    //   }
+      document.getElementById('categoryTitle').innerHTML = 'Spiritual';
+      document.getElementById('category-logo').src =
+       '../images/spiritual-logo.png';
       document.getElementById('category-image').src =
         '../images/spiritual-image.png';
-      //document.getElementById('hero-today').style.backgroundColor =
-      //  backgroundColor_spiritual;
+      document.getElementById('hero-today').style.backgroundColor =
+       backgroundColor_spiritual;
 
       break;
 
     case 'intellectual':
-      title_element.innerHTML = 'Intellectual';
-    //   document.getElementById('category-logo').src =
-    //     '../images/intellectual-logo.png';
+      document.getElementById('categoryTitle').innerHTML = 'Intellectual';
+      document.getElementById('category-logo').src =
+        '../images/intellectual-logo.png';
       document.getElementById('category-image').src =
         '../images/intellectual-image.png';
-    //   document.getElementById('hero-today').style.backgroundColor =
-    //     backgroundColor_intellectual;
+      document.getElementById('hero-today').style.backgroundColor =
+        backgroundColor_intellectual;
 
       break;
 
     case 'social':
-      title_element.innerHTML = 'Social';
-    //   document.getElementById('category-logo').src =
-    //     '../images/social-logo.png';
+      document.getElementById('categoryTitle').innerHTML = 'Social';
+      document.getElementById('category-logo').src =
+        '../images/social-logo.png';
       document.getElementById('category-image').src =
         '../images/social-image.png';
-    //   document.getElementById('hero-today').style.backgroundColor =
-    //     backgroundColor_social;
+      document.getElementById('hero-today').style.backgroundColor =
+        backgroundColor_social;
 
       break;
 
     case 'physical':
-      title_element.innerHTML = 'Physical';
-    //   document.getElementById('category-logo').src =
-    //     '../images/physical-logo.png';
+      document.getElementById('categoryTitle').innerHTML = 'Physical';
+      document.getElementById('category-logo').src =
+        '../images/physical-logo.png';
       document.getElementById('category-image').src =
         '../images/physical-image.png';
-    //   document.getElementById('hero-today').style.backgroundColor =
-    //     backgroundColor_physical;
+      document.getElementById('hero-today').style.backgroundColor =
+        backgroundColor_physical;
 
       break;
 
