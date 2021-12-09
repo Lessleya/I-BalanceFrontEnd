@@ -1,7 +1,7 @@
-import {addEditTask} from './dailytask.js';
-import { getParam } from './utils.js'
-import { createModal } from './task-modal.js'
-import {DataService} from './dataservice.js'
+import { addEditTask } from "./dailytask.js";
+import { getParam } from "./utils.js";
+import { createModal } from "./task-modal.js";
+import { DataService } from "./dataservice.js";
 
 window.addEventListener("load", processTasks);
 
@@ -31,7 +31,7 @@ export async function processTasks() {
       </form>
       <form class="deleteTask getTaskId">
         <input type=hidden name="taskName" value="${task._id}">
-        <button type=submit value="Delete">D</button>
+        <button type=submit value="Delete">X</button>
       </form>
     </li>`; // how should the user see time?
     });
