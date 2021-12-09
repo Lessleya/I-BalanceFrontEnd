@@ -172,14 +172,6 @@
 
 /****************************** ******************************/
 
-footer {
-    background-color: var(--blue);
-    padding: 30px;
-    font-family: "Raleway", sans-serif;
-    font-size: 16px;
-    color: white;
-}
-
 #hero-today {
     background-color: var(--yellow);
     color: black;
@@ -187,7 +179,20 @@ footer {
     text-align: center;
 }
 
+#hero-message {
+    background-color: rgb(178, 113, 221);
+    color: black;
+    max-height: 40%;
+    text-align: center;
+}
+
 #hero-today h1 {
+    text-transform: uppercase;
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+#hero-message h1 {
     text-transform: uppercase;
     margin: 0;
     padding-bottom: 10px;
@@ -240,6 +245,21 @@ footer {
     outline: 0;
     background: #f2f2f2;
     width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.formmsg input {
+    outline: 0;
+    background: #f2f2f2;
+    width: 50%;
     border: 0;
     margin: 0 0 15px;
     padding: 15px;
@@ -399,10 +419,11 @@ footer {
     font-size: 25px;
 }
 
-#category-logo {
+
+/* #category-logo {
     max-width: 200px;
     max-height: 200px;
-}
+} */
 
 #messagetitle {
     font-size: 45px;
@@ -418,6 +439,10 @@ footer {
 
 @media only screen and (min-width: 1028PX) {
     #hero-today {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    #hero-message {
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
@@ -463,38 +488,34 @@ footer {
     text-align: center;
     font-size: 17px;
     margin-top: 20px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    color: white;
 }
 
 
 /********************** DAILY TASK **********************/
-#hero-daily{
+
+#hero-daily {
     background: #FDC80ED9;
 }
 
-.date-info{
+.date-info {
     padding-top: 50px;
     text-align: center;
 }
 
 @media only screen and (min-width: 1028PX) {
-
-
-#hero-daily{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-
+    #hero-daily {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .date-info {
+        margin: auto;
+        grid-column: 1;
+        font-size: 30px;
+    }
 }
-
-.date-info{
-    margin: auto;
-    grid-column: 1;
-    font-size: 30px;
-}
-
-}
-
 
 
 /* The Modal (background) */
@@ -620,7 +641,7 @@ form textarea {
     width: 100%;
     padding: 15px;
     cursor: pointer;
-    border: 1px solid gray;
+    border: 3px solid var(--blue);
     background-color: rgb(255, 255, 255);
     margin: 20px;
 }
@@ -653,10 +674,27 @@ form textarea {
 
 #directMessageEmailDiv {
     text-align: center;
+    padding: 40px;
+    margin: 20px;
 }
 
 #directMessageEmailDiv button {
     margin-top: 15px;
+    background-color: var(--yellow);
+    font-size: 1rem;
+    background: var(--yellow);
+    padding: 14px 32px;
+    border-radius: 4px;
+    margin-top: 2rem;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.35s;
+    outline: none;
+    border: solid 5px var(--yellow);
+}
+
+#directMessageEmailDiv p {
+    padding: 30px;
 }
 
 #directMessagePageImg {
