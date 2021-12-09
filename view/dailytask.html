@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="" content="width=device-width, initial-scale=1.0">
-
     <title>I-Balance</title>
     <meta name="description" content="App to help manage your time ">
     <!-- style -->
@@ -20,34 +19,39 @@
     <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon">
 </head>
 
-
 <header id="main-header">
 
 </header>
 
-<body>
 
-    <div id="hero-today" value="category=spiritual">
-        <div class="category-header">
-            <img id="category-logo" src="" alt="icon" name="category-logo">
-            <h1 id="categoryTitle" name="categoryTitle"> Title</h1>
-        </div>
-        <img id="category-image" src="" alt="icon" name="category-image">
-    </div>
-    <div id="task-cont">
-        <ul>
+<div id="task-cont">
+    <ul>
 
-            <li id="myBtn" id="content"> + Add Task</li>
-        </ul>
-        <ul id="task-list">
+        <li id="myBtn" id="content"> + Add Task</li>
+    </ul>
+    <ul id="task-list">
 
-        </ul>
-    </div>
+    </ul>
+</div>
+<footer id="main-footer">
+</footer>
 
 
-    <footer id="main-footer">
-    </footer>
 
+
+<script src="/js/dataservice.js"></script>
+<script src="https://cdn.socket.io/4.4.0/socket.io.min.js" integrity="sha384-1fOn6VtTq3PWwfsOrk45LnYcGosJwzMHv+Xh/Jx5303FVOXzEnw0EpLv30mtjmlj" crossorigin="anonymous"></script>
+
+<!-- <script type="module">
+    import { io } from "https://cdn.socket.io/4.3.2/socket.io.esm.min.js";
+</script> -->
+
+<!-- <script src="/socket.io/socket.io.js"></script> -->
+<!-- <script>
+    const socket = io();
+</script> -->
+
+<script type='module' src="/js/direct-message-modal.js"></script>
 </body>
 
 </html>
