@@ -2,20 +2,22 @@ import { loadHeaderFooter } from './utils.js';
 import { isLoggedIn } from './check-login.js';
 import "https://cdn.socket.io/4.4.0/socket.io.min.js"
 
+
+loadHeaderFooter();
+
 export const socket = io('https://cse341-ibalance-api.herokuapp.com/', {
   transports: ['websocket'],
 });
 
-isLoggedIn().then(email => {
-  console.log(email);
-  socket.emit('name', email);
-  socket.email = email
-});
 
-loadHeaderFooter();
+isLoggedIn().then(email => {
+    console.log(email);
+    socket.emit('name', email);
+    socket.email = email
+  });
 
 function categories(category) {
-  var title_element = document.getElementById('categoryTitle');
+  var titleElement = document.getElementById('categoryTitle');
   var backgroundColor_spiritual = '#FFDA92';
   var backgroundColor_intellectual = '#9EE0D8';
   var backgroundColor_social = '#BBE09E';
@@ -28,45 +30,45 @@ function categories(category) {
       if (titleElement) {
         title_element.innerHTML = 'Spiritual';
       }
-      document.getElementById('category-logo').src =
-        '../images/spiritual-logo.png';
+      //document.getElementById('category-logo').src =
+      //  '../images/spiritual-logo.png';
       document.getElementById('category-image').src =
         '../images/spiritual-image.png';
-      document.getElementById('hero-today').style.backgroundColor =
-        backgroundColor_spiritual;
+      //document.getElementById('hero-today').style.backgroundColor =
+      //  backgroundColor_spiritual;
 
       break;
 
     case 'intellectual':
       title_element.innerHTML = 'Intellectual';
-      document.getElementById('category-logo').src =
-        '../images/intellectual-logo.png';
+    //   document.getElementById('category-logo').src =
+    //     '../images/intellectual-logo.png';
       document.getElementById('category-image').src =
         '../images/intellectual-image.png';
-      document.getElementById('hero-today').style.backgroundColor =
-        backgroundColor_intellectual;
+    //   document.getElementById('hero-today').style.backgroundColor =
+    //     backgroundColor_intellectual;
 
       break;
 
     case 'social':
       title_element.innerHTML = 'Social';
-      document.getElementById('category-logo').src =
-        '../images/social-logo.png';
+    //   document.getElementById('category-logo').src =
+    //     '../images/social-logo.png';
       document.getElementById('category-image').src =
         '../images/social-image.png';
-      document.getElementById('hero-today').style.backgroundColor =
-        backgroundColor_social;
+    //   document.getElementById('hero-today').style.backgroundColor =
+    //     backgroundColor_social;
 
       break;
 
     case 'physical':
       title_element.innerHTML = 'Physical';
-      document.getElementById('category-logo').src =
-        '../images/physical-logo.png';
+    //   document.getElementById('category-logo').src =
+    //     '../images/physical-logo.png';
       document.getElementById('category-image').src =
         '../images/physical-image.png';
-      document.getElementById('hero-today').style.backgroundColor =
-        backgroundColor_physical;
+    //   document.getElementById('hero-today').style.backgroundColor =
+    //     backgroundColor_physical;
 
       break;
 

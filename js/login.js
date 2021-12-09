@@ -30,22 +30,12 @@ document
   .addEventListener('submit', processRegister);
 async function processRegister(e) {
   e.preventDefault();
-<<<<<<< HEAD
   fpassword = document.getElementById('password').value;
   spassword = document.getElementById('verifyPassword').value;
   if (fpassword != spassword) {
     let error = document.querySelector('.hidden-error');
     error.textContent = "Password don't match";
     error.classList.remove('hidden-error');
-=======
-  const _csrf = await DataService.getCsrfToken();
-  fpassword = document.getElementById('password').value
-  spassword = document.getElementById('verifyPassword').value
-  if (fpassword != spassword){
-   let error = document.querySelector('.hidden-error')
-   error.textContent = "Password don't match"
-   error.classList.remove('hidden-error')
->>>>>>> parent of 11ef73e (Merge branch 'main' of https://github.com/Lessleya/I-BalanceFrontEnd)
   }
   const data = {
     name: document.getElementById('name').value,
@@ -92,18 +82,9 @@ async function processResetLogin(e) {
 if (document.querySelector('.logout')) {
   document.querySelector('.logout').addEventListener('click', processLogout);
 }
-<<<<<<< HEAD
 async function processLogout(e) {
   e.preventDefault();
   DataService.post({}, 'logout').then(sucess => {
     console.log(success);
   });
 }
-=======
-document.querySelector('.logout').addEventListener('submit', processLogout);
-async function processLogout(e){
-  e.preventDefault();
-  const _csrf = await DataService.getCsrfToken();
-  DataService.postLogout({_csrf}, 'logout')
-}
->>>>>>> parent of 11ef73e (Merge branch 'main' of https://github.com/Lessleya/I-BalanceFrontEnd)
