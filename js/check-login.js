@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { DataService } from "./dataservice.js"
+=======
+import {DataService} from './dataservice.js'
+>>>>>>> parent of 11ef73e (Merge branch 'main' of https://github.com/Lessleya/I-BalanceFrontEnd)
 
 export async function isLoggedIn() {
     let loggedin = await DataService.get('is-logged-in')
