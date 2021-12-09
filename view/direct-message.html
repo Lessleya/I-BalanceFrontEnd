@@ -9,8 +9,9 @@
     <meta name="description" content="App to help manage your time ">
     <!-- style -->
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/mobile.css">
     <!-- JavaScript -->
-    <!-- <script src="../js/main.js" type="module"></script> -->
+    <script src="../js/main.js" type="module"></script>
     <!-- Fonts  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,12 +19,22 @@
     <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon">
 </head>
 
-<header id="main-header"></header>
+<header id="main-header">
+
+</header>
 
 <body>
+    <div id="hero-today" value="category=spiritual">
+        <div class="category-header">
+            <h1 id="messageTitle" name="categoryTitle"> Direct Message Your Friends</h1>
+        </div>
+        <img id="category-image" src="/images/socila-img.png" alt="icon" id="directMessagePageImg" name="category-image">
+    </div>
+
     <div id="directMessage">
+
         <div id="directMessageEmailDiv">
-            <h1>Direct Message Your Friends</h1>
+
             <p>Simply input your email in the input below and reach out to your friends if they have an account on I-Balance</p>
             <form id="directMessageEmailForm" action="">
                 <label for="directMessageEmail">Email</label>
@@ -32,9 +43,7 @@
             <button id="myBtn">Message</button>
         </div>
 
-        <div>
-            <img src="../images/social.jpg" alt="students outside" id="directMessagePageImg">
-        </div>
+
 
         <!-- Trigger/Open The add task Modal -->
         <div id="myModal" class="modal">
