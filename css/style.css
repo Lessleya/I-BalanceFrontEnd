@@ -164,6 +164,10 @@
     transition: all 0.5s ease;
 }
 
+.main__content {
+    padding: 10px;
+}
+
 #main__img {
     height: 100%;
     width: 100%;
