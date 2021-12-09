@@ -61,7 +61,7 @@ function categories(category) {
     }
 }
 
-function getParam(param) {
+export function getParam(param) {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     return urlParams.get(param);
@@ -73,8 +73,10 @@ categories(category);
 
 const menu = document.querySelector("#mobile-menu");
 const menuLinks = document.querySelector(".navbar__menu");
-
-menu.addEventListener("click", function() {
-    menu.classList.toggle("is-active");
-    menuLinks.classList.toggle("active");
-});
+if (menu) {
+    menu.addEventListener("click", function() {
+        menu.classList.toggle("is-active");
+        menuLinks.classList.toggle("active");
+    });
+    
+}

@@ -1,4 +1,6 @@
-async function addEditTask(type) {
+import {processTasks } from './task.js'
+
+export async function addEditTask(type) {
     const data = {
         taskTitle: document.getElementById("taskTitle").value,
         taskCategory: document.getElementById("taskCategory").value,
