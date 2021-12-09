@@ -49,6 +49,7 @@
     align-items: center;
     cursor: pointer;
     text-decoration: none;
+    letter-spacing: 1px;
 }
 
 .fa-gem {
@@ -218,7 +219,6 @@
 .form {
     position: relative;
     z-index: 1;
-    background: #FFFFFF;
     margin: 0 auto 100px;
     padding: 30px;
     border-top-left-radius: 3px;
@@ -237,7 +237,6 @@
     border-top-right-radius: 100%;
     border-bottom-left-radius: 100%;
     border-bottom-right-radius: 100%;
-    box-sizing: border-box;
 }
 
 .form .thumbnail img {
@@ -436,6 +435,12 @@
     color: white;
     text-shadow: 1px 1px 2px #000000;
     padding: 30px;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
 }
 
 
