@@ -1,14 +1,10 @@
 import { socket } from './main.js';
 
 socket.on('ack', data => {
-  console.log(data);
-  console.log(socket);
   if (data.success) {
-    console.log('click is working');
     document
       .getElementById('myBtn')
       .addEventListener('click', loadDirectMessageContent);
-    console.log('click enabled');
   }
 });
 
