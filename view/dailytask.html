@@ -25,35 +25,27 @@
 
 <div id="hero-daily" value="category=daily">
     <div class="date-info">
-        <h1 id="month" name="month"> Month</h1>
         <h1 id="weekday" name="weekday"> Weekday </h1>
-        <h1 id="day" name="day"> 1 </h1>
+        <h1 id="monthDay" name="month"> Month</h1>
     </div>
     <img id="category-image" src="../images/daily-task.png" alt="icon" name="category-image">
 </div>
 
+<!-- Trigger/Open The add task Modal -->
+<div id="myModal" class="modal">
+
+</div>
+
 <div id="task-cont">
     <ul>
-        <li id="myBtn" id="content"> + Add Task</li>
+        <li id="addTaskBtn" id="content"> + Add Task</li>
     </ul>
     <ul id="task-list">
 
     </ul>
 </div>
 
-
-<!-- <script type="module">
-    import { io } from "https://cdn.socket.io/4.3.2/socket.io.esm.min.js";
-</script> -->
-
-<!-- <script src="/socket.io/socket.io.js"></script> -->
-<!-- <script>
-    const socket = io();
-</script> -->
-
 <script src="../js/date.js" type='module'></script>
-<script src="../js/tasks-day.js" type='module'></script>
-<script src="../js/main.js" type="module"></script>
 <script src="../js/task-modal.js" type='module'></script>
 <script src="../js/task.js" type='module'></script>
 

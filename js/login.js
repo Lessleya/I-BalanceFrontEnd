@@ -1,90 +1,105 @@
-import {DataService} from './dataservice.js'
+import { DataService } from './dataservice.js';
+
+const forms = ['register', 'login', 'resetMsg', 'resetToken'];
+
+function hideOthers(formName) {
+  forms.forEach(form => {
+    const formEle = document.querySelector(`.${form}-form`);
+    if (form === formName) {
+      formEle.classList.remove('hidden-error');
+      formEle.reset();
+    } else {
+      formEle.classList.add('hidden-error');
+    }
+  });
+}
+
+document.querySelectorAll('.js-register').forEach(node => {
+  node.addEventListener('click', () => hideOthers('register'));
+});
+document.querySelectorAll('.js-login').forEach(node => {
+  node.addEventListener('click', () => hideOthers('login'));
+});
+document.querySelectorAll('.js-forgot').forEach(node => {
+  node.addEventListener('click', () => hideOthers('resetMsg'));
+});
+document.querySelectorAll('.js-token').forEach(node => {
+  node.addEventListener('click', () => hideOthers('resetToken'));
+});
 
 document.querySelector('.login-form').addEventListener('submit', processLogin);
-async function processLogin(e) {
+document
+  .querySelector('.register-form')
+  .addEventListener('submit', processRegister);
+document
+  .querySelector('.resetMsg-form')
+  .addEventListener('submit', processResetMsg);
+document
+  .querySelector('.resetToken-form')
+  .addEventListener('submit', processResetToken);
+
+function processLogin(e) {
   e.preventDefault();
   const data = {
     email: document.getElementById('emaillogin').value,
     password: document.getElementById('passwordlogin').value,
+    timeZoneOffset: new Date().getTimezoneOffset() * 60000,
   };
-  const test = await DataService.post(data, 'login');
-  console.log(test);
-  window.location.replace('../view/dailytask.html');
+
+  DataService.post(data, 'login').then(data => {
+    if (data.success) {
+      window.location.replace('../view/dailytask.html');
+    } else {
+      alert('Username or Password is incorrect');
+    }
+  });
 }
 
-document.querySelector('.js-register').addEventListener('click', showRegister);
-async function showRegister(e) {
+function processRegister(e) {
   e.preventDefault();
-  document.querySelector('.register-form').classList.remove('hidden-error');
-  document.querySelector('.login-form').classList.add('hidden-error');
-}
-document.querySelector('.js-signin').addEventListener('click', showLogin);
-async function showLogin(e) {
-  e.preventDefault();
-  document.querySelector('.register-form').classList.add('hidden-error');
-  document.querySelector('.login-form').classList.remove('hidden-error');
-}
-
-document
-  .querySelector('.register-form')
-  .addEventListener('submit', processRegister);
-async function processRegister(e) {
-  e.preventDefault();
-  fpassword = document.getElementById('password').value;
-  spassword = document.getElementById('verifyPassword').value;
+  const fpassword = document.getElementById('password').value;
+  const spassword = document.getElementById('verifyPassword').value;
   if (fpassword != spassword) {
-    let error = document.querySelector('.hidden-error');
-    error.textContent = "Password don't match";
-    error.classList.remove('hidden-error');
+    alert("Passwords don't match");
+    return;
   }
   const data = {
     name: document.getElementById('name').value,
     email: document.getElementById('email').value,
     password: fpassword,
     confirmPassword: spassword,
-    _csrf: _csrf,
   };
-  await DataService.post(data, 'signup');
-  window.location.replace('../view/dailytask.html');
-}
-document.querySelector('.js-forgot').addEventListener('click', showReset);
-async function showReset(e) {
-  e.preventDefault();
-  document.querySelector('.login-form').classList.add('hidden-error');
-  document.querySelector('.reset-form').classList.remove('hidden-error');
+  DataService.post(data, 'signup').then(data => {
+    if (data.success) {
+      hideOthers('login');
+    } else {
+      alert('There was a problem with your registration, please try again.');
+    }
+  });
 }
 
-document.querySelector('.reset-form').addEventListener('submit', processReset);
-async function processReset(e) {
+function processResetMsg(e) {
   e.preventDefault();
   const data = {
     email: document.getElementById('emailReset').value,
   };
   DataService.post(data, 'reset');
-  document.querySelector('.reset-form').classList.add('hidden-error');
-  document.querySelector('.resetLogin-form').classList.remove('hidden-error');
+  hideOthers('login');
 }
-document
-  .querySelector('.resetLogin-form')
-  .addEventListener('submit', processResetLogin);
-async function processResetLogin(e) {
+
+async function processResetToken(e) {
   e.preventDefault();
   const data = {
     token: document.getElementById('token').value,
     email: document.getElementById('resetEmail').value,
-    password: document.getElementById('ResetPassword').value,
+    password: document.getElementById('resetPassword').value,
     confirmPassword: document.getElementById('verifyResetPassword').value,
   };
-  //DataService.postLogout(data, '')
-  document.querySelector('.resetLogin-form').classList.add('hidden-error');
-  document.querySelector('.login-form').classList.remove('hidden-error');
-}
-if (document.querySelector('.logout')) {
-  document.querySelector('.logout').addEventListener('click', processLogout);
-}
-async function processLogout(e) {
-  e.preventDefault();
-  DataService.post({}, 'logout').then(sucess => {
-    console.log(success);
+  DataService.postNewPassword(data, 'new-password').then(data => {
+    if (data.success) {
+      hideOthers('login');
+    } else {
+      alert('Something went wrong. Please request a new token and try again.');
+    }
   });
 }
