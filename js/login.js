@@ -83,7 +83,7 @@ function processResetMsg(e) {
   const data = {
     email: document.getElementById('emailReset').value,
   };
-  DataService.post(data, 'reset');
+  DataService.post(data, 'reset-email');
   hideOthers('login');
 }
 
@@ -91,11 +91,10 @@ async function processResetToken(e) {
   e.preventDefault();
   const data = {
     token: document.getElementById('token').value,
-    email: document.getElementById('resetEmail').value,
     password: document.getElementById('resetPassword').value,
     confirmPassword: document.getElementById('verifyResetPassword').value,
   };
-  DataService.postNewPassword(data, 'new-password').then(data => {
+  DataService.post(data, 'new-password').then(data => {
     if (data.success) {
       hideOthers('login');
     } else {
