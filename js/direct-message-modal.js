@@ -9,6 +9,7 @@ socket.on('ack', data => {
 });
 
 function loadDirectMessageContent() {
+  let toUser = document.getElementById('directMessageEmailInput').value;
   socket.emit(
     'messageTo',
     document.getElementById('directMessageEmailInput').value
@@ -26,7 +27,14 @@ function loadDirectMessageContent() {
         }">${element.message}</p>`;
       });
 
-      dmc.innerHTML = content;
+      console.log(content)
+      let toUserDiv = document.getElementById('toUserDiv')
+      toUserDiv.innerHTML =  `<h3>${toUser}</h3>`
+      // dmc.innerHTML = `<div id="toUserDiv"><h3>${toUser}</h3></div>`;
+      dmc.innerHTML += '<div id="messageContent">';
+      dmc.innerHTML += content;
+      dmc.innerHTML += '</div>';
+      // dmc.innerHTML = content;
 
       document
         .getElementById('sendMessageId')
@@ -40,7 +48,7 @@ function loadDirectMessageContent() {
 socket.on('recieveMessage', data => {
   let dmc = document.getElementById('directMessageContent');
   const toAdd = `<p class="${
-    socket.email == data.fromUserEmail ? 'sender' : 'reciever'
+    socket.email == data.fromEmail ? 'sender' : 'reciever'
   }">${data.message}</p>`;
   dmc.innerHTML += toAdd;
 });
@@ -54,18 +62,24 @@ function messageModal() {
     </div>
     
     <div class="modal-body">
+
+    <div id="toUserDiv">
+    </div>
+
     
+
     <div id="directMessageContent">
     
     </div>
-    
-    <div id="directMessageInputSection">
-        <form id="directMessageForm">
-        <textarea name="directMessageFormInput" id="directMessageFormInput" placeholder="Message..." height: 36px></textarea>
-        </form>
-        <button class="btn" id="sendMessageId">Send</button>
-    </div>
-    
+
+    <div id="directMessageSendMessage">
+    <form id="directMessageForm">
+    <textarea name="directMessageFormInput" id="directMessageFormInput" placeholder="Message..." height: 36px></textarea>
+    </form>
+    <button class="btn" id="sendMessageId">Send</button>
+    </div>  
+
+
     </div>
     
 </div>`;
@@ -98,5 +112,6 @@ function sendMessage() {
     message: message,
     date: time,
     toEmail: toEmail,
+    fromEmail: socket.email
   });
 }

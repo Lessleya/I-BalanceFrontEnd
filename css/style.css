@@ -120,6 +120,7 @@
     margin: 0;
     color: white;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .deleteTask button {
@@ -131,6 +132,7 @@
     margin: 0;
     font-weight: bold;
     color: white;
+    cursor: pointer;
 }
 
 
@@ -818,7 +820,7 @@ form textarea {
     padding-top: 20px
 }
 
-#directMessageForm {
+#directMessageSendMessage{
     display: flex;
     justify-content: space-between;
     /* flex-direction: row; */
@@ -826,14 +828,27 @@ form textarea {
     border-radius: 5px;
 }
 
-#directMessageForm button {
+#directMessageSendMessage button {
     margin-right: 10px;
+    /* color: #0095f6; */
+    /* color: rgba(var(--d69, 0, 149, 246), 1); */
+    padding: 1px;
     border: 0;
-    color: #0095f6;
-    color: rgba(var(--d69, 0, 149, 246), 1);
-    display: inline;
-    padding: 0;
-    position: relative;
+    cursor: pointer;
+    background-color: white; 
+    color: black; 
+    border: 2px solid rgb(178, 113, 221);
+    padding: 5px;   
+    border-radius: 25px;
+    font-size: large;
+}
+
+#directMessageSendMessage button:hover{
+    /* background-color: #008CBA; */
+    color: white;
+    background-color: rgb(178, 113, 221);
+    border: 2px solid rgb(134, 129, 129);
+
 }
 
 #directMessage textarea {
@@ -851,6 +866,46 @@ form textarea {
     /* max-height: 100px; */
 }
 
+#directMessageContent{
+    height: 400px;
+    overflow: scroll;
+    overflow-x: hidden; /* Hide vertical scrollbar */
+}
+
+.sender{
+    padding: 5px;
+    margin-left: 220px;
+    margin-bottom: 15px;
+    border: 2px solid rgb(134, 129, 129);
+    border-radius: 5px;
+    /* text-align: right; */
+    color: black;
+    background-color: lightblue;
+
+}
+
+.reciever{
+    padding: 5px;
+    margin-right: 220px;
+    margin-bottom: 15px;
+    border: 2px solid rgb(134, 129, 129);
+    border-radius: 5px;
+    color: black;
+    background-color: lightgray;
+    /* font-weight: bold; */
+}
+
+#toUserDiv{
+    color: white;
+    text-shadow: 1px 1px 2px #000000;
+    text-align: center;
+    background-color: rgb(178, 113, 221);
+    padding: 10px;
+    border: 2px solid rgb(134, 129, 129);
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
 
 /******************* Util *****************************/
 
