@@ -100,7 +100,7 @@ function handleEditDelete(taskForm) {
   }
 }
 
-async function addEditTask(type) {
+export async function addEditTask(type) {
   const data = {
     taskTitle: document.getElementById('taskTitle').value,
     taskCategory: document.getElementById('taskCategory').value,
@@ -115,17 +115,18 @@ async function addEditTask(type) {
     ).checked;
   }
 
+  const modal = document.getElementById('taskModal');
+  modal.style.display = 'none';
+  
   if (type == 'add') {
     await DataService.post(data, 'add-task')
   } else if (type == 'edit') {
     await DataService.post(data, 'edit-task')
   }
 
-  const modal = document.getElementById('addEditTask');
   // getTasks();
   processTasks(category ? `category-tasks/${category}` : 'daily-tasks');
   // hides modal
-  modal.style.display = 'none';
   // CLEAR DATA
   document.getElementById(`${type}Task`).reset();
 }
