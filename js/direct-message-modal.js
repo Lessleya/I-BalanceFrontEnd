@@ -1,59 +1,60 @@
-import {socket} from './main.js'
-
-
-socket.emit('news', 'hello');
+import { socket } from './main.js';
 
 socket.on('ack', data => {
-  console.log(data);
-  console.log(socket);
   if (data.success) {
-    console.log('click is working');
     document
       .getElementById('myBtn')
       .addEventListener('click', loadDirectMessageContent);
-    console.log('click enabled');
   }
 });
 
 function loadDirectMessageContent() {
-  console.log('here3');
+  let toUser = document.getElementById('directMessageEmailInput').value;
   socket.emit(
     'messageTo',
     document.getElementById('directMessageEmailInput').value
   );
-  console.log('here4');
-  socket.on('messageData', function (data) {
-    console.log('recieve data');
-    console.log(data); //should output 'hello world'
+  socket.on('messageData', data => {
+    if (data.success) {
+      messageModal();
 
-    // if(data['connected'] == false){
-    if (data['success'] == false) {
-      alert('no user found');
-      // dmc.innerHTML = "<p>No user was found</p>"
-    } else {
-      console.log('user found');
-      messageUserByEmail();
-      let dmc = document.getElementById('directMessageContent');
-      let content = "";
+      const dmc = document.getElementById('directMessageContent');
+      let content = '';
+
       data.data.forEach(element => {
-        content += `<p class="${socket.email == element.fromUserEmail ? "sender" : "reciever"}">${element.message}</p>`
+        content += `<p class="${
+          socket.email == element.fromUserEmail ? 'sender' : 'reciever'
+        }">${element.message}</p>`;
       });
-      dmc.innerHTML = content;
-      document.getElementById('sendMessageId').addEventListener('click', sendMessage);
+
+      console.log(content)
+      let toUserDiv = document.getElementById('toUserDiv')
+      toUserDiv.innerHTML =  `<h3>${toUser}</h3>`
+      // dmc.innerHTML = `<div id="toUserDiv"><h3>${toUser}</h3></div>`;
+      dmc.innerHTML += '<div id="messageContent">';
+      dmc.innerHTML += content;
+      dmc.innerHTML += '</div>';
+      // dmc.innerHTML = content;
+
+      document
+        .getElementById('sendMessageId')
+        .addEventListener('click', sendMessage);
+    } else {
+      alert('no user found');
     }
   });
 }
 
 socket.on('recieveMessage', data => {
-  console.log(data)
   let dmc = document.getElementById('directMessageContent');
-  const toAdd = `<p class="${socket.email == data.fromUserEmail ? "sender" : "reciever"}">${data.message}</p>`
-  dmc.innerHTML += toAdd
-})
+  const toAdd = `<p class="${
+    socket.email == data.fromEmail ? 'sender' : 'reciever'
+  }">${data.message}</p>`;
+  dmc.innerHTML += toAdd;
+});
 
-function messageUserByEmail() {
-  // e.preventDefault();
-  let modal = document.getElementById('myModal');
+function messageModal() {
+  const modal = document.getElementById('messageModal');
   modal.innerHTML = `<div class="modal-content">
     <div class="modal-header">
     <span class="close">&times;</span>
@@ -61,18 +62,24 @@ function messageUserByEmail() {
     </div>
     
     <div class="modal-body">
+
+    <div id="toUserDiv">
+    </div>
+
     
+
     <div id="directMessageContent">
     
     </div>
-    
-    <div id="directMessageInputSection">
-        <form id="directMessageForm">
-        <textarea name="directMessageFormInput" id="directMessageFormInput" placeholder="Message..." height: 36px></textarea>
-        </form>
-        <button class="btn" id="sendMessageId">Send</button>
-    </div>
-    
+
+    <div id="directMessageSendMessage">
+    <form id="directMessageForm">
+    <textarea name="directMessageFormInput" id="directMessageFormInput" placeholder="Message..." height: 36px></textarea>
+    </form>
+    <button class="btn" id="sendMessageId">Send</button>
+    </div>  
+
+
     </div>
     
 </div>`;
@@ -98,12 +105,13 @@ function messageUserByEmail() {
 // Modal section
 
 function sendMessage() {
-  let message = document.getElementById('directMessageFormInput').value;
-  let time = Date.now();
-  let toEmail = document.getElementById('directMessageEmailInput').value;
+  const message = document.getElementById('directMessageFormInput').value;
+  const time = Date.now();
+  const toEmail = document.getElementById('directMessageEmailInput').value;
   socket.emit('sendMessage', {
     message: message,
     date: time,
     toEmail: toEmail,
+    fromEmail: socket.email
   });
 }

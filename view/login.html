@@ -39,26 +39,27 @@
                     <input type="password" placeholder="confirm password" id="verifyPassword" />
                     <input type="text" placeholder="email address" id="email" />
                     <button>create</button>
-                    <p class="message js-signin">Already registered?<a href="#">Sign In</a></p>
+                    <p class="message js-login">Already registered?<a href="#">Sign In</a></p>
                 </form>
                 <form class="login-form">
                     <input type="text" placeholder="email address" id="emaillogin" />
                     <input type="password" placeholder="password" id="passwordlogin" />
                     <button>login</button>
-                    <p class="message js-register">Not registered?<a href="#">Create an account</a></p>
-                    <p class="message js-forgot">Forgot Password<a href="#">Reset Password</a></p>
+                    <p class="message js-register">Not registered? <a href="#">Create an account</a></p>
+                    <p class="message js-forgot">Forgot Password? <a href="#">Reset Password</a></p>
                 </form>
-                <form class="reset-form hidden-error">
+                <form class="resetMsg-form hidden-error">
                     <input type="text" placeholder="email address" id="emailReset" />
-                    <button>Rest Password</button>
+                    <button>Reset Password</button>
+                    <p class="message js-token">Have token? <a href="#">Reset Password</a></p>
+                    <p class="message js-login"><a href="#">Return to login</a></p>
                 </form>
-                <form class="resetLogin-form hidden-error">
+                <form class="resetToken-form hidden-error">
                     <input type="text" placeholder="Token" id="token" />
-                    <input type="text" placeholder="email address" id="resetEmail" />
-                    <input type="password" placeholder="password" id="ResetPassword" />
+                    <input type="password" placeholder="password" id="resetPassword" />
                     <input type="password" placeholder="password" id="verifyResetPassword" />
                     <button>Submit</button>
-
+                    <p class="message js-login"><a href="#">Return to login</a></p>
                 </form>
             </div>
         </div>
