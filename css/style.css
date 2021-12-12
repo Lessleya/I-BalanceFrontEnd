@@ -158,6 +158,8 @@
 .hero-section img {
     width: 50%;
     float: right;
+    max-width: 1300px;
+    padding: 0 50px;
 }
 
 .main__btn {
@@ -188,7 +190,8 @@
 }
 
 .main__content {
-    padding: 10px;
+    max-width: 1300px;
+    padding: 0 50px;
 }
 
 #main__img {
@@ -210,6 +213,9 @@
     color: black;
     max-height: 40%;
     text-align: center;
+    width: 100%;
+    max-width: 1300px;
+    padding: 0 50px;
 }
 
 #hero-message {
